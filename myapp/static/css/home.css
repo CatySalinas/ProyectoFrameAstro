@@ -1,0 +1,74 @@
+  /* Estilos para el navbar */
+  body {
+    background-color: #D7E2E9;
+    color: black;
+    font-size: 18px; /* Tamaño de texto más grande */
+    margin: 0;
+    font-family: bold;
+}
+/* Estilos para el cuadro */
+.cuadro {
+    width: 95%;
+    height: 70vh;
+    background-color: #fff;
+    color: #000;
+   margin: auto;
+    text-align: center;
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+
+}
+
+/* Estilos para el footer */
+.footer {
+    margin: 0;
+    width: 100vw;
+    background-color: #333;
+    color: #fff;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+}
+
+/* Estilos para el modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fefefe;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+}
+
+.modal-content {
+    padding: 20px;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 24px;
+}
+
+/* Estilos para el fondo difuminado */
+.overlay {
+    display: none;
+    position: fixed;
+    z-index: 900;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro con transparencia */
+}
+
+

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nuevo Diseño</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+    />
+  </head>
+  <body class="flex flex-col py-[60px] px-40 w-full justify-center">
+    <header>
+      <div class="w-full flex justify-center">
+      <h1 class="font-sans text-5xl font-bold mb-3">Nuevo diseño</h1>
+      </div>
+      <div class="w-full flex justify-end">
+      <p class="text-xl font-normal max-w-[557px]">
+        Estos datos se usarán para crear tu diseño. Asegúrate de que sean correctos, claros y concisos.
+      </p>
+    </div>
+    </header>
+
+    <form
+      class="flex w-full flex-wrap gap-10 mt-11 mb-10 justify-start text-gray-500 items-center"
+      action=""
+      id="form-nuevoDiseno"
+    >
+
+      <label class="font-bold flex flex-col" for="nombre"
+        >Nombre del diseño
+        <input
+          class="bg-[#F3F3F3] rounded-[10px] w-[370px] h-[62px] px-10 py-2 items-center justify-center"
+          type="text"
+          id="nombre"
+          name="nombre"
+          placeholder="Nombre del diseño"
+        />
+      </label>
+
+      <label class="font-bold flex flex-col" for="genero">Tipo de filamento
+        <select class="bg-[#F3F3F3]
+          rounded-[10px]
+          w-[370px] h-[62px]
+          px-10 py-2 items-center
+          justify-center" id="tipoFilamento" name="tipoFilamento">
+          <option value="" selected disabled hidden>Selecciona una opción</option>
+          <option value="pla">PLA</option>
+          <option value="tpu">TPU</option>
+          <option value="nylon">Nylon</option>
+          <option value="petg">PETG</option>
+        </select>
+      </label>
+
+      <label class="font-bold flex flex-col" for="genero">Colores
+        <select class="bg-[#F3F3F3]
+          rounded-[10px]
+          w-[370px] h-[62px]
+          px-10 py-2 items-center
+          justify-center" id="genero" name="genero">
+          <option value="" selected disabled hidden>Selecciona una opción</option>
+          <option value="azul">Azul</option>
+          <option value="rojo">Rojo</option>
+          <option value="verde">Verde</option>
+          <option value="negro">Negro</option>
+        </select>
+      </label>
+
+
+      <label class="font-bold flex flex-col" for="descripcion"
+        > Proporciona una descripción detallada del diseño y su funcionalidad
+        <input
+          class="bg-[#F3F3F3] rounded-[10px] w-[500px] h-[200px] px-100 py-6 items-center justify-center"
+          type="text"
+          id="descripcion"
+          name="descripcion"
+          placeholder="Descripción del diseño personalizado"
+        />
+      </label>
+    </form>
+
+    <footer class="flex justify-around mt-20 w-full">
+      <button class="bg-gray-500 text-white font-bold py-2 px-4 rounded"> Cancelar </button>
+      <button class="bg-blue-500 text-white font-bold py-2 px-4 rounded"> Enviar </button>
+    </footer>
+  </body>
+</html>

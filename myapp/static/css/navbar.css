@@ -1,0 +1,252 @@
+/* navbar.css */
+nav{
+    font-family: bold;
+    font-size: 20px;
+  
+}
+
+a {
+    text-decoration: none; /* Elimina la subrayado predeterminado */
+    color: black; /* Utiliza el color del texto padre */
+  }
+  
+.navbar {
+    background-color: #333; /* Color de fondo del navbar */
+    height: 100px;
+    align-content: center;
+    margin-bottom: 20px;
+
+}
+
+.header {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 10px 20px;
+}
+ .header .img_logo {
+    height: 50px; /* Altura del logo */
+}
+
+.search-container {
+ width: 70%;
+   
+
+}
+
+.search-container input[type="text"] {
+    width: 100%; /* Ancho del campo de búsqueda */
+    padding: 10px; /* Espaciado interno */
+    border-radius: 5px; /* Bordes redondeados */
+    border: none; /* Sin borde */
+}
+
+
+.car-shop img {
+    height: 30px; /* Altura del icono del carrito de compras */
+}
+
+.navbar .profil-btn img {
+    height: 30px; /* Altura del icono de perfil */
+}
+
+/* Estilos para el modal */
+.modal {
+    display: none; /* Por defecto oculto */
+    position: fixed; 
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%;
+    overflow: auto; 
+    background-color: rgba(0,0,0,0.4); 
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; 
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; 
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+ .profil-btn {
+   
+    border: none; /* Sin borde */
+    background: none; /* Sin fondo */
+    padding: 0; /* Sin espaciado interno */
+    margin: 0; /* Sin margen */
+}
+
+/* Estilos para el modal */
+.modal {
+    width:60%;
+    height: 62%;
+    display: none;
+    z-index: 1000;
+    left: 50%;
+    padding: 0;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fefefe;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+   
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 0;
+    padding: 0;
+    width: auto;
+    height: auto;
+    display: flex;
+    height: 100%; /* El contenido del modal ocupa el 100% de la altura del modal */
+}
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 24px;
+}
+
+/* Estilos para el fondo difuminado */
+.overlay {
+display: none;
+    
+    z-index: 900;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro con transparencia */
+}
+
+.content1{
+    display: flex;
+   
+    align-items: center;
+    width: 50%;
+    flex-direction: column;
+}
+.content2{
+    display: flex;
+    
+    align-items: center;
+    width: 50%;
+    flex-direction: column;
+}
+/* Estilos para el contenido del formulario de inicio de sesión */
+.content1 {
+    text-align: center; /* Centrar el contenido */
+    padding: 20px; /* Espaciado interno */
+}
+
+.content1 h2 {
+    font-size: 24px; /* Tamaño de fuente para el título */
+    margin-bottom: 10px; /* Espaciado inferior */
+}
+
+.content1 .text-inp {
+    font-size: 16px; /* Tamaño de fuente para los textos de entrada */
+    margin-bottom: 5px; /* Espaciado inferior */
+}
+
+.content1 .input {
+    width: 100%; /* Ancho completo del campo de entrada */
+    padding: 10px; /* Espaciado interno */
+    margin-bottom: 10px; /* Espaciado inferior */
+    border-radius: 5px; /* Bordes redondeados */
+    border: 1px solid #ccc; /* Borde ligero */
+    box-sizing: border-box; /* Esto asegura que el padding se incluya en el ancho */
+}
+
+.content1 .input:focus {
+    outline: none; /* Quita el borde al enfocar */
+    border-color: #007bff; /* Cambia el color del borde al enfocar */
+}
+
+/* Estilos para content2 del modal */
+.content2 {
+    text-align: center; /* Centrar el contenido */
+    padding: 20px; /* Espaciado interno */
+}
+
+.content2 h2 {
+    font-size: 24px; /* Tamaño de fuente para el título */
+    margin-bottom: 10px; /* Espaciado inferior */
+}
+
+.content2 .text-inp {
+    font-size: 16px; /* Tamaño de fuente para los textos de entrada */
+    margin-bottom: 15px; /* Espaciado inferior */
+}
+
+.boton {
+    margin-top:30px ;
+    margin-bottom: 10px;
+    background-color: rgba(215, 226, 233, 1); /* Color de fondo del botón */
+    color: #fff; /* Color del texto del botón */
+    border: none; /* Sin borde */
+    border-radius: 40px; /* Bordes redondeados */
+    width: 296px;
+    padding: 10px 20px; /* Espaciado interno */
+    font-size: 16px; /* Tamaño de fuente del botón */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    
+}
+
+.boton:hover {
+    background-color: #0056b3; /* Cambia el color de fondo al pasar sobre el botón */
+}
+
+.term-cond {
+    font-size: 10px; /* Tamaño de fuente para los términos y condiciones */
+    margin-top: 10px; /* Espaciado superior */
+}
+
+.pass{
+    font-size: 10px; /* Tamaño de fuente para los términos y condiciones */
+}
+
+.vertical-line {
+    margin-top: 2%; /* Centra horizontalmente */
+    display: flex; /* Activa flexbox */
+    justify-content: center; /* Centra verticalmente */
+    align-items: center; /* Centra horizontalmente */
+    width: 1px;
+    
+    height:90%;
+    background-color: #333;
+}
+
+/* Estilos para el elemento con la clase "line" */
+.line {
+    position: relative; /* Establece la posición relativa */
+}
+
+.line::after {
+   content: '';
+    position: absolute; /* Establece la posición absoluta */
+    bottom: -5px; /* Coloca la línea 5px por debajo del texto */
+     left: -120px;/* Coloca la línea alineada con el texto */
+    width: 400px; /* Ancho completo */
+    height: 1px; /* Grosor de la línea */
+    background-color: black; /* Color de la línea */
+}

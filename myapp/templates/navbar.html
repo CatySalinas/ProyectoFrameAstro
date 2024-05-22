@@ -1,0 +1,46 @@
+{% load static %}
+
+<nav class="navbar">
+
+    <link rel="stylesheet" href='{% static "css/navbar.css"%}'>
+
+
+    <div class="header">
+
+
+
+        <img class="img_logo" src="{% static 'images/logo.png' %}" alt="Logo">
+        <div class="search-container">
+            <input type="text" placeholder="Busca por categoría o nombre de productos">
+        </div>
+   <a href="/new-desing" class="new-desing"><img src="{%static 'images/addchart.png'%}" alt=""></a>
+   
+    <a href="/carshop" class="car-shop"><img src="{% static 'images/carshop.png' %}" alt="carrito de compra"></a>
+    <button class="profil-btn" onclick="openModal()"><img src="{% static 'images/person.png' %}" alt="Perfil"></button>
+
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <div class="content1">
+                <h2 class="line">Iniciar sesión </h2>
+                <p class="text-inp">Email o número de teléfono</p>
+                <input class="input" type="text">
+                <p class="text-inp">Contraseña</p>
+                <input class="input" type="password">
+                <button class="boton"><a href="">Iniciar Sesion</a></button>
+                <p class="term-cond">Para continuar, debes aceptar los <b><a href="#">Terminos de uso</b> y <b>Politica de privacidad </b></a></p>
+                <p class="pass"><a href="/">olvide mi contraseña</a></p>
+            </div>
+            <div class="vertical-line"></div> <!-- Add this line -->
+            <div class="content2">
+                <h2 class="line">¿No tienes cuenta?</h2>
+                <p class="text-inp">Regístrate super rápido y recibe todos los beneficios de ser un usuario</p>
+                <button class="boton"><a href="">Me quiero registrar</a></button>
+                
+            </div>
+        </div>
+    </div>
+
+    <div class="overlay" onclick="closeModal()"></div>
+    
+</nav>

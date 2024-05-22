@@ -1,0 +1,148 @@
+ /* Estilos para el navbar */
+
+
+ @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+ 
+ body {
+    background-color:white;
+    color: black;
+    font-size: 18px; /* Tamaño de texto más grande */
+    margin: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.navbar {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+    width: 100%;    
+    border-radius: 10px; /* Añadiendo bordes redondeados */
+     padding-bottom: 20px;
+    padding-top:20px;
+    font-size: 28px;
+    
+}
+
+.navbar .img_logo {
+    width: 60px; /* Ancho de la imagen */
+    height: 60px;
+    padding-right: 250px;
+    padding-left: 20px; /* Espaciado entre la imagen y las listas */
+}
+
+.navbar ul {
+    font-weight: bold;
+    list-style-type: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar li {
+    padding-left: 20px; /* Aumentando el espacio entre las listas */
+    margin-right: 20px; /* Aumentando el espacio entre las listas */
+}
+
+.navbar a {
+    color: black;
+    text-decoration: none;
+}
+
+
+.car-shop {
+    width: 40px;
+    height: 40px;
+    margin-left: 230px;
+    margin-right: 50px; /* Espaciado entre las imágenes y las listas */
+}
+.car-shop{
+    margin-bottom: 5px;
+}
+
+
+.search-container {
+    margin-top: 10px; /* Espaciado superior del contenedor de búsqueda */
+    width: 100%;
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+}
+
+
+.search-container input[type=text] {
+    padding: 6px; /* Espaciado interior del input */
+    padding-left: 20px;
+    font-size: 18px; /* Tamaño de texto del input */
+    border: none; /* Quita el borde del input */
+    width: 60%;
+    border-radius: 5px;
+    border: 2px solid black;
+    margin-bottom: 10px;
+}
+
+/* Estilos para el cuadro */
+.cuadro {
+    width: 95%;
+    height: 70vh;
+    background-color: #fff;
+    color: #000;
+   margin: auto;
+    text-align: center;
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+
+}
+
+/* Estilos para el footer */
+.footer {
+    margin: 0;
+    width: 100vw;
+    background-color: #333;
+    color: #fff;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+}
+
+
+.profil-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+.text-inp {
+    font-size: 15px;
+    padding-bottom: 0;
+    
+}
+.content1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    flex-direction: column;
+}
+.input{
+    width: 90%;
+}
+.content2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    flex-direction: column;
+}
+.input{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+
