@@ -23,15 +23,8 @@
         }
     </style>
 </head>
-
+{%include 'navbar.html'%}
 <body class="bg-gray-100">
-
-    <!-- Encabezado -->
-    <header class="flex justify-start items-center w-full py-6 px-10 bg-white shadow-md mb-10">
-        <img class="w-auto h-10" src="{% static 'images/logoASTRO.png' %}" alt="logoASTRO">
-    </header>
-    
-
     <!-- Contenido principal -->
     <main class="container mx-auto px-4">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -50,22 +43,15 @@
         </div>
     </main>
 
-    {% include 'footer.html'%}
 </body>
 
-<!--<footer>
+<footer>
   
-    <div class="footer bg-gray-800 text-white py-4 mt-10">
+    <div class="footer bg-gray-800 h-full text-white py-6 mt-5">
       <p class="text-center">Teléfono: 442 740 0215 | Correo: astro3d@gmail.com</p>
     </div>
-  
     <script src="{% static 'js/home.js' %}"></script>
-</footer>-->
-
-
-
-
-
+</footer>
 
 </html>
 
