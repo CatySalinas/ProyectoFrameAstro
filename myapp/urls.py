@@ -10,5 +10,9 @@ urlpatterns = [
     path('nuevoDiseno/',views.nuevoDiseno), # Asignando la vista 'nuevoDiseno' a la ruta '/nuevoDiseno/'
     path('cuentaUsuario/',views.cuentaUsuario),
     path('contactanos/',views.contactanos),
-    path('editarUsuario/',views.editarUsuario)
+    path('editarUsuario/',views.editarUsuario),
+    path('agregarProducto/',views.agregarProducto),
+    path('datosPago/',views.datosPago),
+    path('catalogo',views.catalogo)
+    
 ]

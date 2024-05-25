@@ -9,17 +9,21 @@
       href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
     />
   </head>
-  <body class="flex flex-col py-[60px] px-40 w-full justify-center">
-    <header>
-      <div class="w-full flex justify-center">
-      <h1 class="font-sans text-5xl font-bold mb-3">Nuevo diseño</h1>
-      </div>
-      <div class="w-full flex justify-end">
+  <body class="bg-gray-100">
+    <header class="w-full bg-black text-white">
+        <div class="container mx-auto flex items-start p-3">
+          <h1 class="text-3xl font-bold">
+            <span class="text-blue-300">Astro</span><span class="text-white">3D</span>
+          </h1>
+        </div>
+    </header>
+    <main class="flex flex-col items-start mx-9 my-9">
+      <h1 class="font-sans text-5xl font-bold mb-3">Nuevo Diseño</h1>
       <p class="text-xl font-normal max-w-[557px]">
         Estos datos se usarán para crear tu diseño. Asegúrate de que sean correctos, claros y concisos.
       </p>
     </div>
-    </header>
+    
 
     <form
       class="flex w-full flex-wrap gap-10 mt-11 mb-10 justify-start text-gray-500 items-center"
@@ -67,8 +71,8 @@
       </label>
 
 
-      <label class="font-bold flex flex-col" for="descripcion"
-        > Proporciona una descripción detallada del diseño y su funcionalidad
+      <label class="font-bold flex flex-col" for="descripcion">
+        Proporciona una descripción detallada del diseño y su funcionalidad
         <input
           class="bg-[#F3F3F3] rounded-[10px] w-[500px] h-[200px] px-100 py-6 items-center justify-center"
           type="text"
@@ -78,6 +82,16 @@
         />
       </label>
     </form>
+    <div class="font">
+      <h3><em><strong>¡Gracias por tu preferencia!</strong></em></h3>
+    </div>
+   
+    <div style="font-size: small;">
+      <p>Al dar click en "Enviar" nos pondremos en contacto contigo por medio de WhatsApp para proceder con el proceso de compra.</p>
+    </div>
+ 
+    
+    </main>
 
     <footer class="flex justify-around mt-20 w-full">
       <button class="bg-gray-500 text-white font-bold py-2 px-4 rounded"> Cancelar </button>
