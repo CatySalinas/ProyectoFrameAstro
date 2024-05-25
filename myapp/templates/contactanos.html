@@ -7,28 +7,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contáctanos</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     
-    <style>
-        /* Estilos adicionales aquí */
-        .header {
-            height: 100px; /* Altura del encabezado */
-        }
-        .logo {
-            width: 100%; /* Logo abarca todo el ancho del encabezado */
-            max-width: 200px; /* Logo no se hace más grande de 200px */
-        }
-        .contact-image {
-            max-width: 200px; /* Imagen aún más pequeña */
-        }
-    </style>
 </head>
-{%include 'navbar.html'%}
 <body class="bg-gray-100">
+    <header class="w-full bg-black text-white">
+        <div class="container mx-auto flex items-center p-4">
+            <!--<img src="{% static 'images/astro.png' %}" alt="Logo" class="h-8 mr-4">-->
+            <h1 class="text-3xl font-bold">
+              <span class="text-blue-300">Astro</span>
+              <span class="text-white">3D</span>
+          </h1>
+        </div>
+    </header>
     <!-- Contenido principal -->
     <main class="container mx-auto px-4">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div class="max-w-lg">
+                <h1 class="font-bold text-5xl mt-5 mb-3">Sobre nosotros</h1>
                 <p class="text-lg text-gray-700">Somos una empresa 100% mexicana dedicada a la creación y venta de productos realizados con impresión 3D.</p>
                 <p class="text-lg text-gray-700">Contáctanos en nuestras redes sociales o por correo electrónico para cotizar un diseño propio o realizar un nuevo pedido.</p>
                 <h1 class="font-bold text-5xl mt-5 mb-3">Contáctanos</h1>
@@ -38,7 +33,7 @@
                 </div>
             </div>
             <div class="flex justify-center items-center">
-                <img class="contact-image" src="{% static 'images/contacta.png' %}" alt="modelo de carro">
+                <img class="contact-image" src="{% static 'images/contacta.png' %}" alt="modelo de carro" style="max-width: 200px;">
             </div>
         </div>
     </main>

@@ -7,7 +7,11 @@ module.exports = {
     './**/templates/*.html',
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        'blue-aqua': '#00FFFF', // Define el color azul aqua
+      },
+    },
   },
   plugins: [],
 }

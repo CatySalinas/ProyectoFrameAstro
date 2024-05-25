@@ -14,7 +14,8 @@ def home (request):
 
 def newDesing (request):
     return HttpResponse("<h1>New Desing Page<h1>")
-
+def index (request):
+    return render(request,'index.html')
 def carShop (request):
     return HttpResponse("<h1>Card Page<h1>")
 def homeIniciado(request):
@@ -27,3 +28,9 @@ def contactanos(request):
     return render(request, 'contactanos.html')
 def editarUsuario(request):
     return render(request, 'editarUsuario.html')
+def agregarProducto(request):
+    return render(request, 'agregarProducto.html')
+def datosPago(request):
+    return render(request, 'datosPago.html')
+def catalogo(request):
+    return render(request, 'catalogo.html')
