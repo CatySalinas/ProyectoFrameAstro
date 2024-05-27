@@ -4,21 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="../output.css" />
-  <script src="../js/datosPago.js"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
   <title>Datos para proceder al pago</title>
   {% load static %}
 </head>
 <body class="bg-gray-100">
-  <header class="w-full bg-black text-white">
-      <div class="container mx-auto flex items-center p-4">
-          <!--<img src="{% static 'images/astro.png' %}" alt="Logo" class="h-8 mr-4">-->
-          <h1 class="text-3xl font-bold">
-            <span class="text-blue-300">Astro</span>
-            <span class="text-white">3D</span>
-        </h1>
-      </div>
-  </header>
+  {% include 'header.html' %}
    
   <div class="flex flex-col items-start mx-8 my-8">
     <h1 class="font-sans text-5xl font-bold mb-3">Proceder al pago</h1> <br>
@@ -27,82 +18,79 @@
     </p>
 
     <form class="flex w-full flex-wrap gap-10 mt-5 mb-5 justify-start text-gray-500 items-center" action="" id="form-agregarCliente">
-      <label class="font-bold flex flex-col" for="nombre"
-      >Nombre(s)
-      <input
-        class="edit-input-name bg-[#F3F3F3] rounded-[10px] w-[370px] h-[62px] px-10 py-2 items-center justify-center"
-        type="text"
-        id="edit-input-name"
-        name="nombre"
-        placeholder="Nombre (s)"
-      />
-    </label>
+      <label class="font-bold flex flex-col" for="nombre">Nombre(s)
+        <input
+          class="edit-input-name bg-[#F3F3F3] rounded-[10px] w-[370px] h-[62px] px-10 py-2 items-center justify-center"
+          type="text"
+          id="edit-input-name"
+          name="nombre"
+          placeholder="Nombre (s)"
+        />
+      </label>
 
-    <label class="font-bold flex flex-col" for="apellidos"
-      >Apellidos
-      <input
-        class="edit-input-lastname bg-[#F3F3F3] rounded-[10px] w-[370px] h-[62px] px-10 py-2 items-center justify-center"
-        type="text"
-        id="edit-input-lastname"
-        name="apellidos"
-        placeholder="Apellidos"
-      />
-    </label>
+      <label class="font-bold flex flex-col" for="apellidos">Apellidos
+        <input
+          class="edit-input-lastname bg-[#F3F3F3] rounded-[10px] w-[370px] h-[62px] px-10 py-2 items-center justify-center"
+          type="text"
+          id="edit-input-lastname"
+          name="apellidos"
+          placeholder="Apellidos"
+        />
+      </label>
 
-    <label class="font-bold flex flex-col" for="correo"
-      >Correo
-      <input
-        class="edit-input-username bg-[#F3F3F3] rounded-[10px] w-[370px] h-[62px] px-10 py-2 items-center justify-center"
-        type="text"
-        id="edit-input-correo"
-        name="correo"
-        placeholder="correo"
-      />
-    </label>
+      <label class="font-bold flex flex-col" for="correo">Correo
+        <input
+          class="edit-input-username bg-[#F3F3F3] rounded-[10px] w-[370px] h-[62px] px-10 py-2 items-center justify-center"
+          type="text"
+          id="edit-input-correo"
+          name="correo"
+          placeholder="correo"
+        />
+      </label>
 
-    <label class="font-bold flex flex-col" for="telefono"
-      >Teléfono
-      <input
-        class="bg-[#F3F3F3] rounded-[10px] w-[370px] h-[62px] px-10 py-2 items-center justify-center"
-        type="text"
-        id="edit-input-telefono"
-        name="telefono"
-        placeholder="Teléfono"
-      />
-    </label>
+      <label class="font-bold flex flex-col" for="telefono">Teléfono
+        <input
+          class="bg-[#F3F3F3] rounded-[10px] w-[370px] h-[62px] px-10 py-2 items-center justify-center"
+          type="text"
+          id="edit-input-telefono"
+          name="telefono"
+          placeholder="Teléfono"
+        />
+      </label>
 
-    <label class="font-bold flex flex-col" for="direccion"
-      >Dirección
-      <input
-        class="bg-[#F3F3F3] rounded-[10px] w-[370px] h-[62px] px-10 py-2 items-center justify-center"
-        type="text"
-        id="edit-input-direccion"
-        name="direccion"
-        placeholder="Dirección"
-      />
-    </label>
+      <label class="font-bold flex flex-col" for="direccion">Dirección
+        <input
+          class="bg-[#F3F3F3] rounded-[10px] w-[370px] h-[62px] px-10 py-2 items-center justify-center"
+          type="text"
+          id="edit-input-direccion"
+          name="direccion"
+          placeholder="Dirección"
+        />
+      </label>
 
-    <label class="font-bold flex flex-col" for="cp"
-    >Código Postal
-    <input
-      class="bg-[#F3F3F3] rounded-[10px] w-[370px] h-[62px] px-10 py-2 items-center justify-center"
-      type="text"
-      id="edit-input-direccion"
-      name="cp"
-      placeholder="CP"
-    />
-  </label>
+      <label class="font-bold flex flex-col" for="cp">Código Postal
+        <input
+          class="bg-[#F3F3F3] rounded-[10px] w-[370px] h-[62px] px-10 py-2 items-center justify-center"
+          type="text"
+          id="edit-input-cp"
+          name="cp"
+          placeholder="CP"
+        />
+      </label>
     </form>
     <div style="font-size: small;">
-        <p>En un lapso de 24 hrs recibirás la información por medio de WhatsApp.
-        El método de pago se realizará mediante transferencia bancaria.</p>
+        <p>En un lapso de 24 hrs recibirás la información por medio de WhatsApp. El método de pago se realizará mediante transferencia bancaria.</p>
     </div>
    
 
     <footer class="flex justify-around mt-20 w-full">
       <button class="bg-gray-500 text-white font-bold py-2 px-4 rounded"> Cancelar </button>
-      <button class="bg-blue-500 text-white font-bold py-2 px-4 rounded"> Enviar </button>
+      <button id="btnEnviar" class="bg-blue-500 text-white font-bold py-2 px-4 rounded"> Enviar </button> <!-- Agregamos un ID al botón de enviar -->
     </footer>
   </div>
+
+  <!-- Incluimos el archivo JavaScript -->
+  <script src="../js/datosPago.js"></script>
 </body>
 </html>
+
