@@ -9,6 +9,16 @@ a {
     text-decoration: none; /* Elimina la subrayado predeterminado */
     color: black; /* Utiliza el color del texto padre */
   }
+
+
+    .img_logo{
+        width: 300px;
+        height: 300px;
+
+
+    }
+    
+
   
 .navbar {
     background-color: #333; /* Color de fondo del navbar */
@@ -23,9 +33,13 @@ a {
     justify-content: space-evenly;
     align-items: center;
     padding: 10px 20px;
+    background-color: #333; /* Color de fondo del navbar */
+
 }
  .header .img_logo {
-    height: 50px; /* Altura del logo */
+    height: 100px; /* Altura del logo */
+    width: 100px; /* Ancho del logo */
+
 }
 
 .search-container {
@@ -44,6 +58,8 @@ a {
 
 .car-shop img {
     height: 30px; /* Altura del icono del carrito de compras */
+    margin-right: 10px; /* Espaciado derecho */
+    color:#fff;
 }
 
 .navbar .profil-btn img {
