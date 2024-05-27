@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", function() {
             cp: document.getElementById("edit-input-cp").value.trim()
         };
 
-        // Enviar los datos mediante una solicitud AJAX
+        // Enviar los datos mediante una solicitud AJAX 
         const xhr = new XMLHttpRequest();
         xhr.open("POST", "ruta-de-base-datos", true);
         xhr.setRequestHeader("Content-Type", "application/json");
