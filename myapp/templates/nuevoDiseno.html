@@ -1,99 +1,34 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Nuevo Diseño</title>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
-    />
+document.addEventListener("DOMContentLoaded", function() {
+  const form = document.getElementById("form-nuevoDiseno");
 
-  </head>
-  <body class="bg-gray-100">
-    
-  {% include 'header.html' %}
+  form.addEventListener("submit", function(event) {
+    event.preventDefault();
 
-    <main class="flex flex-col items-start mx-9 my-9">
-      <h1 class="font-sans text-5xl font-bold mb-3">Nuevo Diseño</h1>
-      <p class="text-xl font-normal max-w-[557px]">
-        Estos datos se usarán para crear tu diseño. Asegúrate de que sean correctos, claros y concisos.
-      </p>
-    </div>
-    
+    // Aquí puedes agregar la lógica para enviar los datos del formulario
+    // a través de AJAX o realizar otras acciones necesarias.
 
-    <form
-      class="flex w-full flex-wrap gap-10 mt-11 mb-10 justify-start text-gray-500 items-center"
-      action=""
-      id="form-nuevoDiseno"
-    >
+    // Por ejemplo, podrías recopilar los datos del formulario así:
+    const nombre = document.getElementById("nombre").value;
+    const tipoFilamento = document.getElementById("tipoFilamento").value;
+    const genero = document.getElementById("genero").value;
+    const descripcion = document.getElementById("descripcion").value;
 
-      <label class="font-bold flex flex-col" for="nombre"
-        >Nombre del diseño
-        <input
-          class="bg-[#F3F3F3] rounded-[10px] w-[370px] h-[62px] px-10 py-2 items-center justify-center"
-          type="text"
-          id="nombre"
-          name="nombre"
-          placeholder="Nombre del diseño"
-        />
-      </label>
+    // Luego, podrías enviar estos datos a través de AJAX
+    // usando fetch() o XMLHttpRequest.
 
-      <label class="font-bold flex flex-col" for="genero">Tipo de filamento
-        <select class="bg-[#F3F3F3]
-          rounded-[10px]
-          w-[370px] h-[62px]
-          px-10 py-2 items-center
-          justify-center" id="tipoFilamento" name="tipoFilamento">
-          <option value="" selected disabled hidden>Selecciona una opción</option>
-          <option value="pla">PLA</option>
-          <option value="tpu">TPU</option>
-          <option value="nylon">Nylon</option>
-          <option value="petg">PETG</option>
-        </select>
-      </label>
+    // Por ahora, solo mostraremos los datos en la consola.
+    console.log("Nombre:", nombre);
+    console.log("Tipo de filamento:", tipoFilamento);
+    console.log("Colores:", genero);
+    console.log("Descripción:", descripcion);
 
-      <label class="font-bold flex flex-col" for="genero">Colores
-        <select class="bg-[#F3F3F3]
-          rounded-[10px]
-          w-[370px] h-[62px]
-          px-10 py-2 items-center
-          justify-center" id="genero" name="genero">
-          <option value="" selected disabled hidden>Selecciona una opción</option>
-          <option value="azul">Azul</option>
-          <option value="rojo">Rojo</option>
-          <option value="verde">Verde</option>
-          <option value="negro">Negro</option>
-        </select>
-      </label>
+    // Si deseas redirigir a otra página después de enviar el formulario,
+    // puedes hacerlo usando window.location.href = "url";
 
+    // También puedes mostrar un mensaje de éxito o cualquier otra acción que desees.
+    alert("¡Formulario enviado con éxito!");
 
-      <label class="font-bold flex flex-col" for="descripcion">
-        Proporciona una descripción detallada del diseño y su funcionalidad
-        <input
-          class="bg-[#F3F3F3] rounded-[10px] w-[500px] h-[200px] px-100 py-6 items-center justify-center"
-          type="text"
-          id="descripcion"
-          name="descripcion"
-          placeholder="Descripción del diseño personalizado"
-        />
-      </label>
-    </form>
-    <div class="font">
-      <h3><em><strong>¡Gracias por tu preferencia!</strong></em></h3>
-    </div>
-   
-    <div style="font-size: small;">
-      <p>Al dar click en "Enviar" nos pondremos en contacto contigo por medio de WhatsApp para proceder con el proceso de compra.</p>
-    </div>
- 
-    
-    </main>
-
-    <footer class="flex justify-around mt-20 w-full">
-      <a href="http://127.0.0.1:8000/" class="bg-gray-500 text-white font-bold py-2 px-4 rounded">Cancelar</a>
-      <button class="bg-blue-500 text-white font-bold py-2 px-4 rounded"> Enviar </button>
-    </footer>
-  </body>
-</html>
+    // Aquí puedes reiniciar el formulario si deseas borrar los campos después de enviarlos.
+    // form.reset();
+  });
+});
