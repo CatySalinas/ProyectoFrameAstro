@@ -8,15 +8,12 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
     />
+
   </head>
   <body class="bg-gray-100">
-    <header class="w-full bg-black text-white">
-        <div class="container mx-auto flex items-start p-3">
-          <h1 class="text-3xl font-bold">
-            <span class="text-blue-300">Astro</span><span class="text-white">3D</span>
-          </h1>
-        </div>
-    </header>
+    
+  {% include 'header.html' %}
+
     <main class="flex flex-col items-start mx-9 my-9">
       <h1 class="font-sans text-5xl font-bold mb-3">Nuevo Diseño</h1>
       <p class="text-xl font-normal max-w-[557px]">
@@ -94,7 +91,7 @@
     </main>
 
     <footer class="flex justify-around mt-20 w-full">
-      <button class="bg-gray-500 text-white font-bold py-2 px-4 rounded"> Cancelar </button>
+      <a href="http://127.0.0.1:8000/" class="bg-gray-500 text-white font-bold py-2 px-4 rounded">Cancelar</a>
       <button class="bg-blue-500 text-white font-bold py-2 px-4 rounded"> Enviar </button>
     </footer>
   </body>

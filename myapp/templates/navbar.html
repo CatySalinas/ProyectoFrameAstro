@@ -1,4 +1,9 @@
 {% load static %}
+<head>
+    <!-- Incluye Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
 
 <nav class="navbar">
 
@@ -6,17 +11,16 @@
 
 
     <div class="header">
-
-
-
-        <img class="img_logo" src="{% static 'images/logo.png' %}" alt="Logo">
+        <img class="img_logo" src="{% static 'images/logoASTRO.png' %}" alt="Logo">
         <div class="search-container">
             <input type="text" placeholder="Busca por categoría o nombre de productos">
         </div>
+
    <a href="/new-desing" class="new-desing"><img src="{%static 'images/addchart.png'%}" alt=""></a>
    
     <a href="/carShop" class="car-shop"><img src="{% static 'images/carshop.png' %}" alt="carrito de compra"></a>
     <button class="profil-btn" onclick="openModal()"><img src="{% static 'images/person.png' %}" alt="Perfil"></button>
+
 
     <div id="myModal" class="modal">
         <div class="modal-content">
