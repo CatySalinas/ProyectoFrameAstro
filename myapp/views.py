@@ -22,6 +22,8 @@ def homeIniciado(request):
     return render(request,'homeIniciado.html')
 def nuevoDiseno(request):
     return render(request,'nuevoDiseno.html')
+def carShop(request):
+    return render(request,'carShop.html')
 def cuentaUsuario(request):
     return render(request, 'cuentaUsuario.html')
 def contactanos(request):
