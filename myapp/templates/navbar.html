@@ -4,26 +4,43 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 
-
 <nav class="navbar">
 
     <link rel="stylesheet" href='{% static "css/navbar.css"%}'>
 
-
     <div class="header">
+
         <img class="img_logo" src="{% static 'images/logoASTRO.png' %}" alt="Logo">
-        <div class="search-container">
-            <input type="text" placeholder="Busca por categoría o nombre de productos">
+        <div class="flex items-center justify-between">
+            <input type="text" id="searchInput" placeholder="Busca por nombre de producto" class="mr-4 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500 w-96">
+            <select id="categoryFilter" class="px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500">
+                <option value="">Todas las categorías</option>
+                <option value="Juguetes">Juguetes</option>
+                <option value="accesorios">Accesorios</option>
+                <option value="hogar">Hogar</option>
+                <option value="figurasFuncionales">Figuras Funcionales</option>
+                <!-- Agrega más opciones de categoría según sea necesario -->
+            </select>
         </div>
+        
+        <div id="productList">
+            <!-- Aquí se mostrarán los productos -->
+        </div>
+        
         <a href="http://127.0.0.1:8000/nuevoDiseno/" class="new-desing">
             <i class="fas fa-plus fa-lg fa-fw" style="color: white;"></i> <!-- Ícono blanco de "add" de Font Awesome -->
         </a>
         <a href="/carshop" class="car-shop">
             <i class="fas fa-shopping-cart fa-lg fa-fw" style="color: white;"></i> <!-- Ícono blanco de "carrito de compras" de Font Awesome -->
         </a>
-       
-        <button class="profil-btn" onclick="openModal()"></button>        
-        
+
+        <button class="whatsapp">
+            <i class="fab fa-whatsapp fa-lg fa-fw" style="color: white;"></i> <!-- Ícono blanco de "whatsapp" de Font Awesome -->
+        <button class="profil-btn" onclick="openModal()">
+            <i class="fas fa-user fa-lg fa-fw" style="color: white;"></i> <!-- Ícono blanco de "usuario" de Font Awesome -->
+        </button>    
+         
+
     </div>
 
     <div id="myModal" class="modal">
@@ -44,7 +61,6 @@
                 <h2 class="line">¿No tienes cuenta?</h2>
                 <p class="text-inp">Regístrate super rápido y recibe todos los beneficios de ser un usuario</p>
                 <button class="boton"><a href="">Me quiero registrar</a></button>
-                
             </div>
         </div>
     </div>
@@ -52,3 +68,13 @@
     <div class="overlay" onclick="closeModal()"></div>
     
 </nav>
+
+<script>
+    function openModal() {
+        document.getElementById("myModal").style.display = "block";
+    }
+
+    function closeModal() {
+        document.getElementById("myModal").style.display = "none";
+    }
+</script>
