@@ -1,9 +1,9 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="../output.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
   <title>Datos para proceder al pago</title>
   {% load static %}
@@ -11,16 +11,17 @@
 <body class="bg-gray-100">
   {% include 'header.html' %}
    
-  <div class="flex flex-col items-start mx-8 my-8">
-    <h1 class="font-sans text-5xl font-bold mb-3">Proceder al pago</h1> <br>
-    <p class="text-s font-normal max-w-[557px]">
-       Estos datos se usarán para  el envío de tu producto. Verifica que estén ingresados correctamente.
+  <div class="mx-8 my-8 p-8 bg-white shadow-lg rounded-lg">
+    <h1 class="font-sans text-4xl font-bold mb-3">Proceder al pago</h1>
+    <p class="text-base font-normal max-w-[557px] mb-5">
+       Estos datos se usarán para el envío de tu producto. Verifica que estén ingresados correctamente.
     </p>
 
-    <form class="flex w-full flex-wrap gap-10 mt-5 mb-5 justify-start text-gray-500 items-center" action="" id="form-agregarCliente">
+    <form class="flex w-full flex-wrap gap-6 justify-start text-gray-700 items-center" action="" id="form-agregarCliente">
+
       <label class="font-bold flex flex-col" for="nombre">Nombre(s)
         <input
-          class="edit-input-name bg-[#F3F3F3] rounded-[10px] w-[370px] h-[62px] px-10 py-2 items-center justify-center"
+          class="bg-gray-200 rounded-lg w-[370px] h-[62px] px-4 py-2 mt-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
           type="text"
           id="edit-input-name"
           name="nombre"
@@ -30,7 +31,7 @@
 
       <label class="font-bold flex flex-col" for="apellidos">Apellidos
         <input
-          class="edit-input-lastname bg-[#F3F3F3] rounded-[10px] w-[370px] h-[62px] px-10 py-2 items-center justify-center"
+          class="bg-gray-200 rounded-lg w-[370px] h-[62px] px-4 py-2 mt-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
           type="text"
           id="edit-input-lastname"
           name="apellidos"
@@ -40,7 +41,7 @@
 
       <label class="font-bold flex flex-col" for="correo">Correo
         <input
-          class="edit-input-username bg-[#F3F3F3] rounded-[10px] w-[370px] h-[62px] px-10 py-2 items-center justify-center"
+          class="bg-gray-200 rounded-lg w-[370px] h-[62px] px-4 py-2 mt-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
           type="text"
           id="edit-input-correo"
           name="correo"
@@ -50,7 +51,7 @@
 
       <label class="font-bold flex flex-col" for="telefono">Teléfono
         <input
-          class="bg-[#F3F3F3] rounded-[10px] w-[370px] h-[62px] px-10 py-2 items-center justify-center"
+          class="bg-gray-200 rounded-lg w-[370px] h-[62px] px-4 py-2 mt-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
           type="text"
           id="edit-input-telefono"
           name="telefono"
@@ -60,7 +61,7 @@
 
       <label class="font-bold flex flex-col" for="direccion">Dirección
         <input
-          class="bg-[#F3F3F3] rounded-[10px] w-[370px] h-[62px] px-10 py-2 items-center justify-center"
+          class="bg-gray-200 rounded-lg w-[370px] h-[62px] px-4 py-2 mt-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
           type="text"
           id="edit-input-direccion"
           name="direccion"
@@ -70,7 +71,7 @@
 
       <label class="font-bold flex flex-col" for="cp">Código Postal
         <input
-          class="bg-[#F3F3F3] rounded-[10px] w-[370px] h-[62px] px-10 py-2 items-center justify-center"
+          class="bg-gray-200 rounded-lg w-[370px] h-[62px] px-4 py-2 mt-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
           type="text"
           id="edit-input-cp"
           name="cp"
@@ -78,19 +79,20 @@
         />
       </label>
     </form>
-    <div style="font-size: small;">
+
+    <div class="text-sm text-gray-600 mt-2 mb-5">
         <p>En un lapso de 24 hrs recibirás la información por medio de WhatsApp. El método de pago se realizará mediante transferencia bancaria.</p>
     </div>
-   
 
-    <footer class="flex justify-around mt-20 w-full">
-      <button class="bg-gray-500 text-white font-bold py-2 px-4 rounded"> Cancelar </button>
-      <button id="btnEnviar" class="bg-blue-500 text-white font-bold py-2 px-4 rounded"> Enviar </button> <!-- Agregamos un ID al botón de enviar -->
+    <footer class="flex justify-between w-full">
+        
+        <div class="flex justify-center w-full">
+          <a href="http://127.0.0.1:8000/" class="bg-gray-500 text-white font-bold py-2 px-4 rounded hover:bg-gray-600 mx-28">Cancelar</a>
+          <button class="bg-blue-500 text-white font-bold py-2 px-4 rounded hover:bg-blue-600 mx-28">Enviar</button>
+      </div>
     </footer>
   </div>
-
-  <!-- Incluimos el archivo JavaScript -->
-  <script src="../js/datosPago.js"></script>
 </body>
 </html>
+
 

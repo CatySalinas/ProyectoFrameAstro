@@ -12,25 +12,23 @@
 <body class="bg-gray-100">
     {% include 'header.html' %}
     <!-- Contenido principal -->
-    <main class="container mx-auto px-4">
+    <main class="container mx-auto px-4 py-8">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div class="max-w-lg">
-                <h1 class="font-bold text-5xl mt-5 mb-3">Sobre nosotros</h1>
-                <p class="text-lg text-gray-700">Somos una empresa 100% mexicana dedicada a la creación y venta de productos realizados con impresión 3D.</p>
-                <p class="text-lg text-gray-700">Contáctanos en nuestras redes sociales o por correo electrónico para cotizar un diseño propio o realizar un nuevo pedido.</p>
-                <h1 class="font-bold text-5xl mt-5 mb-3">Contáctanos</h1>
-                <div class="bg-gray-200 rounded-lg p-5">
-                    <h3 class="font-bold text-xl mb-3">¿Qué hacer si tienes problemas con el proceso de compra?</h3>
-                    <p class="text-lg">Llámanos directamente o comunícate con la empresa por vía electrónica para poder ayudarte a solucionar el inconveniente.</p>
-                </div>
+            <div class="max-w-lg bg-white rounded-lg p-6 shadow-md">
+                <h1 class="font-bold text-4xl md:text-5xl mb-4">Sobre nosotros</h1>
+                <p class="text-lg text-gray-700 mb-4">Somos una empresa 100% mexicana dedicada a la creación y venta de productos realizados con impresión 3D.</p>
+                <p class="text-lg text-gray-700 mb-8">Contáctanos en nuestras redes sociales o por correo electrónico para cotizar un diseño propio o realizar un nuevo pedido.</p>
             </div>
-            <div class="flex justify-center items-center">
-                <img class="contact-image" src="{% static 'images/contacta.png' %}" alt="modelo de carro" style="max-width: 200px;">
+            <div class="max-w-lg bg-white rounded-lg p-6 shadow-md">
+                <h2 class="font-bold text-4xl md:text-5xl mb-4">Contáctanos</h2>
+                <p class="text-lg text-gray-700">¿Qué hacer si tienes problemas con el proceso de compra?</p>
+                <p class="text-lg text-gray-700">Llámanos directamente o comunícate con la empresa por vía electrónica para poder ayudarte a solucionar el inconveniente.</p>
             </div>
         </div>
     </main>
-
 </body>
+
+
 
 <footer>
   
