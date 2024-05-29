@@ -22,6 +22,13 @@
                 <!-- Agrega más opciones de categoría según sea necesario -->
             </select>
         </div>
+
+
+  
+   
+   
+
+
         
         <div id="productList">
             <!-- Aquí se mostrarán los productos -->
@@ -30,9 +37,10 @@
         <a href="http://127.0.0.1:8000/nuevoDiseno/" class="new-desing">
             <i class="fas fa-plus fa-lg fa-fw" style="color: white;"></i> <!-- Ícono blanco de "add" de Font Awesome -->
         </a>
-        <a href="/carshop" class="car-shop">
-            <i class="fas fa-shopping-cart fa-lg fa-fw" style="color: white;"></i> <!-- Ícono blanco de "carrito de compras" de Font Awesome -->
-        </a>
+ <!-- < <a href="/new-desing" class="new-desing"><img src="{%static 'images/addchart.png'%}" alt=""></a> -->
+  
+       <a href="/carShop" class="car-shop"><img src="{% static 'images/carshop.png' %}" alt="carrito de compra"></a>
+    <button class="profil-btn" onclick="openModal()"><img src="{% static 'images/person.png' %}" alt="Perfil"></button>
 
         <button class="whatsapp">
             <i class="fab fa-whatsapp fa-lg fa-fw" style="color: white;"></i> <!-- Ícono blanco de "whatsapp" de Font Awesome -->
@@ -42,6 +50,7 @@
          
 
     </div>
+
 
     <div id="myModal" class="modal">
         <div class="modal-content">
