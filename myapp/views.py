@@ -34,3 +34,7 @@ def datosPago(request):
     return render(request, 'datosPago.html')
 def catalogo(request):
     return render(request, 'catalogo.html')
+def registroUsuario(request):
+    return render(request, 'registroUsuario.html')
+def seguimientoPedido(request):
+    return render(request, 'seguimientoPedido.html')
