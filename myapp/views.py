@@ -38,3 +38,5 @@ def registroUsuario(request):
     return render(request, 'registroUsuario.html')
 def seguimientoPedido(request):
     return render(request, 'seguimientoPedido.html')
+def carShop(request):
+    return render(request, 'carShop.html')
