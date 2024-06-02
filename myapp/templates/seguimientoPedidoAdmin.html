@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seguimiento de Pedido - Admin</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
+    <!-- Contenido principal -->
+    <main class="container mx-auto px-4 py-8">
+        <h2 class="text-3xl font-bold mb-4">Seguimiento de Pedido</h2>
+        <div class="bg-white rounded-lg shadow-md p-6">
+            <ol class="relative border-l border-gray-200">
+                <li class="mb-10 ml-4">
+                    <div class="absolute w-3 h-3 bg-blue-500 rounded-full mt-1.5 -left-1.5 border border-white"></div>
+                    <h3 class="text-lg font-semibold text-gray-900">Pedido realizado</h3>
+                    <time class="block mb-2 text-sm font-normal leading-none text-gray-400">Fecha: <input type="date" value="2024-05-01" class="bg-gray-100 rounded"></time>
+                    <p class="text-base font-normal text-gray-500">Tu pedido ha sido realizado con éxito.</p>
+                </li>
+                <li class="mb-10 ml-4">
+                    <div class="absolute w-3 h-3 bg-blue-500 rounded-full mt-1.5 -left-1.5 border border-white"></div>
+                    <h3 class="text-lg font-semibold text-gray-900">Pedido en creación</h3>
+                    <time class="block mb-2 text-sm font-normal leading-none text-gray-400">Fecha: <input type="date" value="2024-05-02" class="bg-gray-100 rounded"></time>
+                    <p class="text-base font-normal text-gray-500">Estamos trabajando en la creación de tu pedido.</p>
+                </li>
+                <li class="ml-4">
+                    <div class="absolute w-3 h-3 bg-blue-500 rounded-full mt-1.5 -left-1.5 border border-white"></div>
+                    <h3 class="text-lg font-semibold text-gray-900">Pedido enviado</h3>
+                    <time class="block mb-2 text-sm font-normal leading-none text-gray-400">Fecha: <input type="date" value="2024-05-03" class="bg-gray-100 rounded"></time>
+                    <p class="text-base font-normal text-gray-500">Tu pedido ha sido enviado y está en camino.</p>
+                </li>
+                <!-- Agrega más estados según sea necesario -->
+            </ol>
+            <button class="mt-4 bg-green-500 text-white px-4 py-2 rounded" onclick="guardarCambios()">Guardar cambios</button>
+        </div>
+    </main>
+
+    <script>
+        function guardarCambios() {
+            // Lógica para guardar los cambios realizados por el admin
+            
+            alert("Cambios guardados");
+        }
+    </script>
+</body>
+</html>

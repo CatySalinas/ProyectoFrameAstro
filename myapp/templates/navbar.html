@@ -5,44 +5,79 @@
     <link rel="stylesheet" href='{% static "css/navbar.css"%}'>
 </head>
 
-
 <nav class="navbar">
 
    
 
-
     <div class="header">
+
         <img class="img_logo" src="{% static 'images/logoASTRO.png' %}" alt="Logo">
-        <div class="search-container">
-            <input type="text" placeholder="Busca por categoría o nombre de productos">
+        <div class="flex items-center justify-between">
+            <input type="text" id="searchInput" placeholder="Busca por nombre de producto" class="mr-4 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500 w-96">
+           
         </div>
 
-        <a href="/new-desing" class="new-desing"><img src="{%static 'images/addchart.png'%}" alt=""></a>
+
+
+  
+   
+   
+
+
         
-        <a href="/carShop" class="car-shop"><img src="{% static 'images/carshop.png' %}" alt="carrito de compra"></a>
-        <button class="profil-btn" onclick="openModal()"><img src="{% static 'images/person.png' %}" alt="Perfil"></button>
+        <div id="productList">
+            <!-- Aquí se mostrarán los productos -->
+        </div>
+        
+        <a href="http://127.0.0.1:8000/nuevoDiseno/" class="new-desing">
+            <i class="fas fa-plus fa-lg fa-fw" style="color: white;"></i> <!-- Ícono blanco de "add" de Font Awesome -->
+        </a>
+
+    <button class="profil-btn" onclick="openModal()"><img src="{% static 'images/person.png' %}" alt="Perfil"></button>
+
+        <a href="/carShop" class="car-shop">
+            <i class="fas fa-shopping-cart fa-lg fa-fw" style="color: white;"></i> <!-- Ícono blanco de "carrito de compras" de Font Awesome -->
+        </a>
 
 
-        <div id="myModal" class="modal">
-            <div class="modal-content">
-                <span class="close" onclick="closeModal()">&times;</span>
-                <div class="content1">
-                    <h2 class="line">Iniciar sesión </h2>
-                    <p class="text-inp">Email o número de teléfono</p>
-                    <input class="input" type="text">
-                    <p class="text-inp">Contraseña</p>
-                    <input class="input" type="password">
-                    <button class="boton"><a href="">Iniciar Sesion</a></button>
-                    <p class="term-cond">Para continuar, debes aceptar los <b><a href="#">Terminos de uso</b> y <b>Politica de privacidad </b></a></p>
-                    <p class="pass"><a href="/">olvide mi contraseña</a></p>
-                </div>
-                <div class="vertical-line"></div> <!-- Add this line -->
-                <div class="content2">
-                    <h2 class="line">¿No tienes cuenta?</h2>
-                    <p class="text-inp">Regístrate super rápido y recibe todos los beneficios de ser un usuario</p>
-                    <button class="boton"><a href="">Me quiero registrar</a></button>
-                    
-                </div>
+        <a href="http://127.0.0.1:8000/contactanos/" class="ask-btn">
+            <i class="fas fa-question fa-lg fa-fw" style="color: white;"></i> <!-- Ícono blanco de "pregunta" de Font Awesome -->
+        </a>
+    </button>
+ 
+
+        
+        <button class="profil-btn" onclick="openModal()">
+            <i class="fas fa-user fa-lg fa-fw" style="color: white;"></i> <!-- Ícono blanco de "usuario" de Font Awesome -->
+        </button>    
+       
+         
+
+    </div>
+
+
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <div class="content1">
+                <h2 class="line">Iniciar sesión </h2>
+                <p class="text-inp">Email o número de teléfono</p>
+                <input class="input" type="text">
+                <p class="text-inp">Contraseña</p>
+                <input class="input" type="password">
+                <button class="boton"><a href="">Iniciar Sesion</a></button>
+                <p class="term-cond">Para continuar, debes aceptar los <b><a href="#">Terminos de uso</b> y <b>Politica de privacidad </b></a></p>
+                <p class="pass"><a href="/">olvide mi contraseña</a></p>
+            </div>
+            <div class="vertical-line"></div> <!-- Add this line -->
+            <div class="content2">
+                <h2 class="line">¿No tienes cuenta?</h2>
+                <p class="text-inp">Regístrate super rápido y recibe todos los beneficios de ser un usuario</p>
+                <button class="boton">
+                    <a href="http://127.0.0.1:8000/registroUsuario/" class="inline-block w-full h-full py-2 px-4 text-white font-bold">
+                      Me quiero registrar
+                    </a>
+                  </button>
             </div>
         </div>
 
@@ -50,3 +85,13 @@
             
     </div>
 </nav>
+
+<script>
+    function openModal() {
+        document.getElementById("myModal").style.display = "block";
+    }
+
+    function closeModal() {
+        document.getElementById("myModal").style.display = "none";
+    }
+</script>

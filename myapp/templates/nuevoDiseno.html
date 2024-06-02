@@ -1,37 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Nuevo Diseño</title>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
-    />
-
-  </head>
-  <body class="bg-gray-100">
-    
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nuevo Diseño</title>
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+  />
+</head>
+<body class="bg-gray-100">
   {% include 'header.html' %}
 
-    <main class="flex flex-col items-start mx-9 my-9">
-      <h1 class="font-sans text-5xl font-bold mb-3">Nuevo Diseño</h1>
-      <p class="text-xl font-normal max-w-[557px]">
-        Estos datos se usarán para crear tu diseño. Asegúrate de que sean correctos, claros y concisos.
-      </p>
-    </div>
-    
+  <main class="flex flex-col items-start mx-auto my-12 p-8 bg-white shadow-lg rounded-lg max-w-4xl">
+    <h1 class="font-sans text-4xl font-bold mb-6 text-gray-800">Nuevo Diseño</h1>
+    <p class="text-lg font-normal text-gray-600 mb-8">
+      Estos datos se usarán para crear tu diseño. Asegúrate de que sean correctos, claros y concisos.
+    </p>
 
     <form
-      class="flex w-full flex-wrap gap-10 mt-11 mb-10 justify-start text-gray-500 items-center"
+      class="flex w-full flex-wrap gap-10 justify-start text-gray-700 items-center"
       action=""
       id="form-nuevoDiseno"
     >
 
-      <label class="font-bold flex flex-col" for="nombre"
-        >Nombre del diseño
+      <label class="font-bold flex flex-col w-[370px] text-sm" for="nombre">
+        Nombre del diseño
         <input
-          class="bg-[#F3F3F3] rounded-[10px] w-[370px] h-[62px] px-10 py-2 items-center justify-center"
+          class="bg-gray-200 rounded-lg h-[62px] px-4 py-2 mt-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
           type="text"
           id="nombre"
           name="nombre"
@@ -39,12 +35,13 @@
         />
       </label>
 
-      <label class="font-bold flex flex-col" for="genero">Tipo de filamento
-        <select class="bg-[#F3F3F3]
-          rounded-[10px]
-          w-[370px] h-[62px]
-          px-10 py-2 items-center
-          justify-center" id="tipoFilamento" name="tipoFilamento">
+      <label class="font-bold flex flex-col w-[370px] text-sm" for="tipoFilamento">
+        Tipo de filamento
+        <select
+          class="bg-gray-200 rounded-lg h-[62px] px-4 py-2 mt-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          id="tipoFilamento"
+          name="tipoFilamento"
+        >
           <option value="" selected disabled hidden>Selecciona una opción</option>
           <option value="pla">PLA</option>
           <option value="tpu">TPU</option>
@@ -53,12 +50,13 @@
         </select>
       </label>
 
-      <label class="font-bold flex flex-col" for="genero">Colores
-        <select class="bg-[#F3F3F3]
-          rounded-[10px]
-          w-[370px] h-[62px]
-          px-10 py-2 items-center
-          justify-center" id="genero" name="genero">
+      <label class="font-bold flex flex-col w-[370px] text-sm" for="genero">
+        Colores
+        <select
+          class="bg-gray-200 rounded-lg h-[62px] px-4 py-2 mt-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          id="colores"
+          name="colores"
+        >
           <option value="" selected disabled hidden>Selecciona una opción</option>
           <option value="azul">Azul</option>
           <option value="rojo">Rojo</option>
@@ -67,32 +65,30 @@
         </select>
       </label>
 
-
-      <label class="font-bold flex flex-col" for="descripcion">
+      <label class="font-bold flex flex-col w-[500px] text-sm" for="descripcion">
         Proporciona una descripción detallada del diseño y su funcionalidad
-        <input
-          class="bg-[#F3F3F3] rounded-[10px] w-[500px] h-[200px] px-100 py-6 items-center justify-center"
-          type="text"
+        <textarea
+          class="bg-gray-200 rounded-lg h-[200px] px-4 py-2 mt-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
           id="descripcion"
           name="descripcion"
           placeholder="Descripción del diseño personalizado"
-        />
+        ></textarea>
       </label>
     </form>
-    <div class="font">
-      <h3><em><strong>¡Gracias por tu preferencia!</strong></em></h3>
+
+    <div class="font mt-8">
+      <h3 class="text-gray-800"><em><strong>¡Gracias por tu preferencia!</strong></em></h3>
     </div>
-   
-    <div style="font-size: small;">
+    
+    <div class="text-sm text-gray-600 mt-2 mb-8">
       <p>Al dar click en "Enviar" nos pondremos en contacto contigo por medio de WhatsApp para proceder con el proceso de compra.</p>
     </div>
- 
-    
-    </main>
 
-    <footer class="flex justify-around mt-20 w-full">
-      <a href="http://127.0.0.1:8000/" class="bg-gray-500 text-white font-bold py-2 px-4 rounded">Cancelar</a>
-      <button class="bg-blue-500 text-white font-bold py-2 px-4 rounded"> Enviar </button>
-    </footer>
-  </body>
+    <div class="flex justify-center w-full">
+      <a href="http://127.0.0.1:8000/" class="bg-gray-500 text-white font-bold py-2 px-4 rounded hover:bg-gray-600 mx-28">Cancelar</a>
+      <button class="bg-blue-500 text-white font-bold py-2 px-4 rounded hover:bg-blue-600 mx-28">Enviar</button>
+  </div>
+  
+  </main>
+</body>
 </html>

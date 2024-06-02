@@ -1,0 +1,47 @@
+.footer a {
+    color: #ffffff; /* Color del texto */
+    text-decoration: none; /* Elimina la subrayado del enlace */
+}
+
+.footer a:hover {
+    text-decoration: underline; /* Subrayado al pasar el cursor */
+}
+
+.footer h2 {
+    font-size: 1.25rem; /* Tamaño de la fuente para los títulos */
+    margin-bottom: 0.5rem; /* Espaciado inferior */
+}
+
+.footer p,
+.footer ul {
+    margin: 0; /* Sin márgenes */
+    padding: 0; /* Sin relleno */
+    list-style: none; /* Elimina viñetas */
+}
+
+.footer ul {
+    margin-top: 0.5rem; /* Espaciado superior para listas */
+}
+
+.footer ul li {
+    margin-bottom: 0.5rem; /* Espaciado inferior para ítems de lista */
+}
+
+.footer .social-icons a {
+    margin-right: 1rem; /* Espaciado derecho para iconos sociales */
+}
+
+.footer .social-icons i {
+    font-size: 1.5rem; /* Tamaño de fuente para iconos sociales */
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .footer .grid {
+        grid-template-columns: 1fr; /* Una columna en dispositivos pequeños */
+        text-align: center; /* Centrar texto */
+    }
+    .footer .social-icons {
+        justify-content: center; /* Centrar iconos sociales */
+    }
+}

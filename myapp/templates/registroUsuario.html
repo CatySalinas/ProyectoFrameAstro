@@ -5,20 +5,19 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
-  <title>Datos para proceder al pago</title>
+  <title>Regístrate</title>
   {% load static %}
 </head>
 <body class="bg-gray-100">
   {% include 'header.html' %}
    
   <div class="mx-8 my-8 p-8 bg-white shadow-lg rounded-lg">
-    <h1 class="font-sans text-4xl font-bold mb-3">Proceder al pago</h1>
+    <h1 class="font-sans text-4xl font-bold mb-3">Regístrate</h1>
     <p class="text-base font-normal max-w-[557px] mb-5">
-       Estos datos se usarán para el envío de tu producto. Verifica que estén ingresados correctamente.
+      Estos datos se usarán después para poder iniciar sesión en el sistema y para hacer pedidos.
     </p>
 
     <form class="flex w-full flex-wrap gap-6 justify-start text-gray-700 items-center" action="" id="form-agregarCliente">
-
       <label class="font-bold flex flex-col" for="nombre">Nombre(s)
         <input
           class="bg-gray-200 rounded-lg w-[370px] h-[62px] px-4 py-2 mt-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -78,21 +77,26 @@
           placeholder="CP"
         />
       </label>
+
+      <label class="font-bold flex flex-col" for="contraseña">Contraseña
+        <input
+          class="bg-gray-200 rounded-lg w-[370px] h-[62px] px-4 py-2 mt-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          type="password"
+          id="edit-input-contraseña"
+          name="contraseña"
+          placeholder="Contraseña"
+        />
+      </label>
     </form>
 
-    <div class="text-sm text-gray-600 mt-2 mb-5">
-        <p>En un lapso de 24 hrs recibirás la información por medio de WhatsApp. El método de pago se realizará mediante transferencia bancaria.</p>
+    <footer class="flex justify-between w-full mt-10">
+      <div class="flex justify-center w-full">
+        <a href="http://127.0.0.1:8000/" class="bg-gray-500 text-white font-bold py-2 px-4 rounded hover:bg-gray-600 mx-28">Cancelar</a>
+        <button class="bg-blue-500 text-white font-bold py-2 px-4 rounded hover:bg-blue-600 mx-28">
+            <a href="http://127.0.0.1:8000/">Guardar</a>
+        </button>
     </div>
-
-    <footer class="flex justify-between w-full">
-        
-        <div class="flex justify-center w-full">
-          <a href="http://127.0.0.1:8000/" class="bg-gray-500 text-white font-bold py-2 px-4 rounded hover:bg-gray-600 mx-28">Cancelar</a>
-          <button class="bg-blue-500 text-white font-bold py-2 px-4 rounded hover:bg-blue-600 mx-28">Enviar</button>
-      </div>
     </footer>
   </div>
 </body>
 </html>
-
-
