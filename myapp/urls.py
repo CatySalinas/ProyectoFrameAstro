@@ -16,5 +16,6 @@ urlpatterns = [
     path('catalogo',views.catalogo),
     path('registroUsuario/',views.registroUsuario),
     path('seguimientoPedido/',views.seguimientoPedido),
+    path('carShop/',views.carShop),
     
 ]
