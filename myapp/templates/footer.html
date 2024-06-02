@@ -1,5 +1,32 @@
 {% load static %}
-<div class="footer">
-    <p>Todos los derechos reservados &copy; 2022</p>
-</div>
-<script src="{% static 'js/home.js' %}"></script>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        /* Ensure the main content area grows to push footer to the bottom */
+        .flex-grow {
+            flex-grow: 1;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col">
+
+    <!-- Main content area -->
+    <div class="flex-grow">
+        <!-- Your content goes here -->
+    </div>
+
+    <!-- Footer -->
+    <div class="footer bg-gray-800 text-white py-4">
+        <p class="text-center">Todos los derechos reservados &copy; 2022</p>
+    </div>
+    
+    <script src="{% static 'js/home.js' %}"></script>
+</body>
+</html>
+

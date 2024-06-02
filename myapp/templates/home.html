@@ -2,15 +2,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href='{% static "css/home.css" %}'>
+    <link rel="stylesheet" href='{% static "css/home.css" %}'>  
     <title>Home</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
-<body class="bg-gray-100">
+<body class="bg-gray-100 min-h-screen flex flex-col">
     {% include 'navbar.html' %}
     
-    <div class="container mx-auto py-8">
+    <div class="container mx-auto py-8 flex-grow">
         <h1 class="text-3xl font-bold text-center mb-8">Catálogo de Productos</h1>
         
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
@@ -201,10 +201,11 @@
                 
             
             <!-- Más productos... -->
+         
         </div>
     </div>
       
-   
+    {%include 'footer.html'%}
     <script src="{% static 'js/home.js' %}"></script>
 </body>
 </html>
