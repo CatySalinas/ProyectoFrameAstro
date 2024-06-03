@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -34,14 +35,8 @@
             </ol>
             <button class="mt-4 bg-green-500 text-white px-4 py-2 rounded" onclick="guardarCambios()">Guardar cambios</button>
         </div>
+        <script src="{% static 'js/seguimientoPedido.js' %}"></script>
     </main>
 
-    <script>
-        function guardarCambios() {
-            // Lógica para guardar los cambios realizados por el admin
-            
-            alert("Cambios guardados");
-        }
-    </script>
 </body>
 </html>

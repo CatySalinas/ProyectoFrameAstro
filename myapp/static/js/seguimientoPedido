@@ -1,0 +1,5 @@
+ function guardarCambios() {
+            // Lógica para guardar los cambios realizados por el admin
+            
+            alert("Cambios guardados");
+        }
