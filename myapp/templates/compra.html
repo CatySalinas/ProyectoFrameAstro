@@ -1,0 +1,39 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <title>Compra completada</title>
+</head>
+
+<body class="bg-gray-100">
+    {% include 'header.html' %}
+
+    <div class="container mx-auto my-12 p-8 bg-white shadow-lg rounded-lg">
+        <div class="text-center">
+            <h1 class="text-4xl font-bold mb-6">Compra completada</h1>
+            <p class="text-lg mb-4">¡Gracias por tu compra! Tu pedido ha sido completado con éxito.</p>
+            <p class="text-lg mb-4">Tu número de pedido es: <span class="font-semibold">{{ pedido.id }}</span></p>
+        </div>
+        <div class="flex justify-center mt-6">
+            <a href="http://127.0.0.1:8000/seguimientoPedido/" class="bg-gray-500 text-white px-4 py-3 rounded-lg transition duration-300 ease-in-out transform hover:scale-105">
+            Ver seguimiento de pedido
+            </a>
+        </div>
+        <div class="flex justify-center mt-4">
+            <a href="http://127.0.0.1:8000/" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300 ease-in-out transform hover:scale-105">
+            Volver al inicio
+            </a>
+        </div>
+    </div>
+
+</body>
+
+</html>
+           
