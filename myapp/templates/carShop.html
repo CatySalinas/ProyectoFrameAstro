@@ -1,3 +1,4 @@
+
 {%load static%}
 <!DOCTYPE html>
 <html lang="es">
@@ -9,7 +10,9 @@
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
 <body>
+
   {%include 'header.html'%}
+
   <div class="container mx-auto">
     <h1 class="text-3xl font-bold mb-6">Carrito de Compras</h1>
     
@@ -57,7 +60,6 @@
           <h2 class="text-2xl font-semibold mb-4">Resumen del Pedido</h2>
           <div class="space-y-4">
             <div class="flex justify-between">
-              <span class="text-gray-600">Subtotal</span>
               <span class="text-lg font-medium">$35.00</span>
             </div>
             <div class="flex justify-between">
@@ -82,8 +84,8 @@
     </div>
     
   </div>
-  
-  {%include 'foot.html'%}
+
+  {%include 'footer.html'%}
   <script src="{% static 'js/home.js' %}"></script>
 </body>
 </html>
