@@ -47,10 +47,7 @@
  
 
         
-        <button class="profil-btn" onclick="openModal()">
-            <i class="fas fa-user fa-lg fa-fw" style="color: white;"></i> <!-- Ícono blanco de "usuario" de Font Awesome -->
-        </button>    
-       
+      
          
 
     </div>
@@ -81,17 +78,11 @@
             </div>
         </div>
 
-        <div class="overlay" onclick="closeModal()"></div>
+
             
     </div>
 </nav>
+<div class="overlay" onclick="closeModal()"></div>
+<script src="{%static 'js/navbar.js'}">
 
-<script>
-    function openModal() {
-        document.getElementById("myModal").style.display = "block";
-    }
-
-    function closeModal() {
-        document.getElementById("myModal").style.display = "none";
-    }
 </script>
