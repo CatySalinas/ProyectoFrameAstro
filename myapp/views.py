@@ -1,24 +1,16 @@
 from django.shortcuts import render
-from django.shortcuts import redirect
+
 from django.http import HttpResponse
-from django.contrib.auth.forms import AuthenticationForm
-from django.contrib.auth import login
+
+
+from . forms import UsuarioForm
 
 
 from django.shortcuts import render
-from django.contrib.auth.decorators import login_required
+
 # Create your views here.
 
 
-def user_login(request):
-    if request.method == 'POST':
-        form = AuthenticationForm(request, data=request.POST)
-        if form.is_valid():
-            login(request, form.get_user())
-            return redirect('dashboard')  # Redirige a la página de inicio después del login
-    else:
-        form = AuthenticationForm()
-    return render(request, 'login.html', {'form': form})
 
 
 def about (request):
@@ -61,3 +53,12 @@ def compra(request):
     return render(request, 'compra.html')
 def verProducto(request):
     return render(request, 'verProducto.html')
+
+def formulario(request):
+    if request.method == 'POST':
+        form = UsuarioForm(request.POST)
+        if form.is_valid():
+            form.save()
+    else:
+        form = UsuarioForm()
+    return render(request, 'formulario.html', {'form': form})

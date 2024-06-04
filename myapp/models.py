@@ -3,17 +3,19 @@ from django.db import models
 class Project(models.Model):
     name = models.CharField(max_length=200)
 
+class Usuario(models.Model):
+    nombre = models.CharField(max_length=100)
+    apellidos = models.CharField(max_length=150)
+    telefono = models.CharField(max_length=10,  default='')
+    direccion = models.CharField(max_length=100, default='')
+    correo=models.CharField(max_length=100)
+    contraseña=models.CharField(max_length=100)
 
 
 class cuentaUsuario(models.Model):
     username = models.CharField(max_length=100)
     password = models.CharField(max_length=20)
 
-class Usuario(models.Model):
-    nombre = models.CharField(max_length=100)
-    apellidos = models.CharField(max_length=150)
-    correo = models.EmailField(unique=True)
-    contraseña = models.CharField(max_length=128)
 
 
     def _str_(self):
