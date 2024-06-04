@@ -1,6 +1,8 @@
 from django.urls import path
 from . import views 
-from .views import user_login
+from django.contrib.auth.views import LoginView, LogoutView
+
+
 urlpatterns = [
     
     path('', views.home),  # Asignando la vista 'home' a la ruta '/home/'
@@ -17,10 +19,9 @@ urlpatterns = [
     path('registroUsuario/',views.registroUsuario),
     path('seguimientoPedido/',views.seguimientoPedido),
     path('carShop/',views.carShop),
-
-    #path('accounts/',include('django.contrib.auth.urls'))
-     path('login/', user_login, name='login')
-
+    path('login/', LoginView.as_view(template_name='homeIniciado.html'), name='login'),
+    path('logout/', LogoutView.as_view(next_page='home'), name='logout'),
+    path('formulario/',views.formulario,name='formulario'),
     path('compra',views.compra),
     path('verProducto/',views.verProducto),
 
