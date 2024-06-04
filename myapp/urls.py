@@ -17,6 +17,11 @@ urlpatterns = [
     path('registroUsuario/',views.registroUsuario),
     path('seguimientoPedido/',views.seguimientoPedido),
     path('carShop/',views.carShop),
+
     #path('accounts/',include('django.contrib.auth.urls'))
      path('login/', user_login, name='login')
+
+    path('compra',views.compra),
+    path('verProducto/',views.verProducto),
+
 ]

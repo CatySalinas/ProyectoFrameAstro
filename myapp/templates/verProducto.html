@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detalles del Libro</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/public/css/libro.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+
+<header class="bg-dark text-white p-3 d-flex justify-content-between align-items-center" style="font-family:'Poppins', sans-serif;">
+  <div class="logo">
+    <img src="img/L2.png" alt="Logo" style="max-width: 200px; height: auto;">
+  </div>
+  <nav class="d-flex">
+    <a href="index.html" class="text-white mx-2">Inicio</a>
+    <a href="catalogo.html" class="text-white mx-2">Libros</a>
+    <a href="#" class="text-white mx-2">Contacto</a>
+  </nav>
+  <div class="actions d-flex">
+    <button class="btn btn-outline-light mx-2">Login</button>
+    <button class="btn btn-outline-light">Carrito (0)</button>
+  </div>
+</header>
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-4">
+      <img src="img/L1.jpg" class="img-fluid" alt="Portada del Libro">
+    </div>
+    <div class="col-md-8">
+      <h2 style="font-size: 50px;">Invisible</h2>
+      <p>Autor: Eloy Moreno</p>
+      <p style="font-size: 40px;"><b>$280.00</b></p>
+      <p>Sinopsis:</p>
+      <p class="sinopsis">Invisible es una conmovedora historia que aborda temas como el acoso escolar, la amistad y la autoaceptación. El protagonista, un chico invisible, sufre el acoso de un matón llamado MM en el instituto. A pesar de sentirse solo e incomprendido, encuentra consuelo en su amiga Kiri y su hermana Luna. La trama comienza en el hospital, donde el chico invisible despierta sin recordar lo sucedido. A lo largo de la novela, se revelan los momentos traumáticos que lo llevaron hasta allí.</p>
+      <div class="rating">
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star"></span>
+        <span>(3.0)</span>
+      </div>
+      <div class="form-group">
+        <label for="quantity">Cantidad:</label>
+        <input type="number" class="form-control" id="quantity" value="1" min="1">
+      </div>
+      <button type="button" class="btn btn-primary">Agregar al Carrito</button>
+    </div>
+  </div>
+  <div class="row mt-5">
+    <div class="col-md-12">
+      <h3>Comentarios</h3>
+      <div class="comment">
+        <p>¡Este libro es increíble! Lo recomiendo totalmente.</p>
+        <div class="rating">
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+        </div>
+      </div>
+      <div class="comment">
+        <p>No me gustó mucho este libro, esperaba más.</p>
+        <div class="rating">
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+        </div>
+      </div>
+      <div class="comment">
+        <p>Fue difícil de comprender.</p>
+        <div class="rating">
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<footer class="bg-dark text-white text-center py-3 mt-5">
+  <p>© 2024 Book.com Todos los derechos reservados.</p>
+</footer>
+<style> 
+  body, html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .container {
+    flex: 1;
+  }
+  
+  footer {
+    width: 100%;
+  }
+  
+.comment {
+    margin-bottom: 20px;
+  }
+  
+  .comment p {
+    margin-bottom: 5px;
+  }
+  
+  .rating {
+    display: inline-block;
+  }
+  
+  .rating .fa {
+    color: #FFD700;
+    font-size: 16px;
+  }
+  
+  .checked {
+    color: #FFD700;
+  }
+  
+  .sinopsis {
+    font-size: 20px;
+    text-align: justify;
+  }
+  
+  .precio {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .comment-container {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-top: 20px;
+  }
+  .sinopsis {
+    font-size: 18px; 
+    text-align: justify; 
+  }
+</style>

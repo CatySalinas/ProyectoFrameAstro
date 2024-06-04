@@ -57,3 +57,7 @@ def seguimientoPedido(request):
     return render(request, 'seguimientoPedido.html')
 def carShop(request):
     return render(request, 'carShop.html')
+def compra(request):
+    return render(request, 'compra.html')
+def verProducto(request):
+    return render(request, 'verProducto.html')
