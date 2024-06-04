@@ -1,6 +1,6 @@
 from django.urls import path
 from . import views 
-
+from .views import user_login
 urlpatterns = [
     
     path('', views.home),  # Asignando la vista 'home' a la ruta '/home/'
@@ -17,5 +17,6 @@ urlpatterns = [
     path('registroUsuario/',views.registroUsuario),
     path('seguimientoPedido/',views.seguimientoPedido),
     path('carShop/',views.carShop),
-    
+    #path('accounts/',include('django.contrib.auth.urls'))
+     path('login/', user_login, name='login')
 ]

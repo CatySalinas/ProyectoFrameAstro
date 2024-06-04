@@ -58,12 +58,17 @@
             <span class="close" onclick="closeModal()">&times;</span>
             <div class="content1">
                 <h2 class="line">Iniciar sesión </h2>
-                <p class="text-inp">Email o número de teléfono</p>
-                <input class="input" type="text">
-                <p class="text-inp">Contraseña</p>
-                <input class="input" type="password">
-                <button class="boton"><a href="">Iniciar Sesion</a></button>
+                <form action="{% url 'login' %}" method="post">
+                    {% csrf_token %}
+                    <p class="text-inp">Email o número de teléfono</p>
+                    <input class="input" type="text" id="user" name="username">                      
+                    <p class="text-inp">Contraseña</p>
+                    <input class="input" type="password" id="password" name="password">         
+                    <button type="submit" class="boton">Iniciar Sesión</button>
+                </form>
+                
                 <p class="term-cond">Para continuar, debes aceptar los <b><a href="#">Terminos de uso</b> y <b>Politica de privacidad </b></a></p>
+                
                 <p class="pass"><a href="/">olvide mi contraseña</a></p>
             </div>
             <div class="vertical-line"></div> <!-- Add this line -->
