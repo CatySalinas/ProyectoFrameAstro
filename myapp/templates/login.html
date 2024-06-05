@@ -1,0 +1,47 @@
+{% load static %}
+<head>
+    <!-- Incluye Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href='{% static "css/navbar.css"%}'>
+</head>
+
+<div id="myModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <div class="content1">
+            <h2 class="line">Iniciar sesión </h2>
+            <form action="" method="post">
+                {% csrf_token %}
+                <p class="text-inp">Email o número de teléfono</p>
+                <input class="input" type="text" id="user" name="username">
+                <p class="text-inp">Contraseña</p>
+                <input class="input" type="password" id="password" name="password">
+                <button type="submit" class="boton">Iniciar Sesión</button>
+            </form>
+
+            <p class="term-cond">Para continuar, debes aceptar los <b><a href="#">Terminos de uso</b> y <b>Politica
+                    de privacidad </b></a></p>
+            
+            <p class="pass"><a href="/">olvide mi contraseña</a></p>
+        </div>
+        <div class="vertical-line"></div> <!-- Add this line -->
+        <div class="content2">
+            <h2 class="line">¿No tienes cuenta?</h2>
+            <p class="text-inp">Regístrate super rápido y recibe todos los beneficios de ser un usuario</p>
+            <button class="boton">
+                <a href="/formulario"
+                    class="inline-block w-full h-full py-2 px-4 text-white font-bold">
+                    Me quiero registrar
+                </a>
+            </button>
+        </div>
+    </div>
+
+
+
+</div>
+
+<div class="overlay" onclick="closeModal()"></div>
+<script src="{%static 'js/navbar.js'}">
+
+</script>

@@ -1,10 +1,17 @@
 from django.shortcuts import render
+
 from django.http import HttpResponse
+
+
+from . forms import UsuarioForm
+
+
 from django.shortcuts import render
+
 # Create your views here.
 
-def hello (request):
-    return HttpResponse("<h1>Hello World<h1>")
+
+
 
 def about (request):
     return HttpResponse("<h1>About Us<h1>")
@@ -22,6 +29,8 @@ def homeIniciado(request):
     return render(request,'homeIniciado.html')
 def nuevoDiseno(request):
     return render(request,'nuevoDiseno.html')
+def carShop(request):
+    return render(request,'carShop.html')
 def cuentaUsuario(request):
     return render(request, 'cuentaUsuario.html')
 def contactanos(request):
@@ -44,7 +53,12 @@ def compra(request):
     return render(request, 'compra.html')
 def verProducto(request):
     return render(request, 'verProducto.html')
-def jefe(request):
-    return render(request, 'jefe.html')
-def politicas(request):
-    return render(request, 'politicas.html')
+def formulario(request):
+    if request.method == 'POST':
+        form = UsuarioForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return HttpResponse('Usuario guardado')
+    else:
+        form = UsuarioForm()
+    return render(request, 'formulario.html', {'form': form})

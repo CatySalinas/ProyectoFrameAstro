@@ -17,13 +17,15 @@
       Estos datos se usarán después para poder iniciar sesión en el sistema y para hacer pedidos.
     </p>
 
-    <form class="flex w-full flex-wrap gap-6 justify-start text-gray-700 items-center" action="" id="form-agregarCliente">
+    <form class="flex w-full flex-wrap gap-6 justify-start text-gray-700 items-center" method="post">
+      {% csrf_token %}
       <label class="font-bold flex flex-col" for="nombre">Nombre(s)
         <input
           class="bg-gray-200 rounded-lg w-[370px] h-[62px] px-4 py-2 mt-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
           type="text"
           id="edit-input-name"
           name="nombre"
+          required
           placeholder="Nombre (s)"
         />
       </label>
@@ -34,6 +36,7 @@
           type="text"
           id="edit-input-lastname"
           name="apellidos"
+          required
           placeholder="Apellidos"
         />
       </label>
@@ -41,7 +44,8 @@
       <label class="font-bold flex flex-col" for="correo">Correo
         <input
           class="bg-gray-200 rounded-lg w-[370px] h-[62px] px-4 py-2 mt-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-          type="text"
+          type="email"
+          required
           id="edit-input-correo"
           name="correo"
           placeholder="correo"
@@ -52,6 +56,7 @@
         <input
           class="bg-gray-200 rounded-lg w-[370px] h-[62px] px-4 py-2 mt-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
           type="text"
+          required
           id="edit-input-telefono"
           name="telefono"
           placeholder="Teléfono"
@@ -62,6 +67,7 @@
         <input
           class="bg-gray-200 rounded-lg w-[370px] h-[62px] px-4 py-2 mt-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
           type="text"
+          required
           id="edit-input-direccion"
           name="direccion"
           placeholder="Dirección"
@@ -72,6 +78,7 @@
         <input
           class="bg-gray-200 rounded-lg w-[370px] h-[62px] px-4 py-2 mt-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
           type="text"
+          required
           id="edit-input-cp"
           name="cp"
           placeholder="CP"
@@ -82,19 +89,19 @@
         <input
           class="bg-gray-200 rounded-lg w-[370px] h-[62px] px-4 py-2 mt-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
           type="password"
+          required
           id="edit-input-contraseña"
           name="contraseña"
           placeholder="Contraseña"
         />
       </label>
-    </form>
+   
 
     <footer class="flex justify-between w-full mt-10">
       <div class="flex justify-center w-full">
-        <a href="http://127.0.0.1:8000/" class="bg-gray-500 text-white font-bold py-2 px-4 rounded hover:bg-gray-600 mx-28">Cancelar</a>
-        <button class="bg-blue-500 text-white font-bold py-2 px-4 rounded hover:bg-blue-600 mx-28">
-            <a href="http://127.0.0.1:8000/">Guardar</a>
-        </button>
+        <a href="../" class="bg-gray-500 text-white font-bold py-2 px-4 rounded hover:bg-gray-600 mx-28">Cancelar</a>
+        <input  class="bg-blue-500 text-white font-bold py-2 px-4 rounded hover:bg-blue-600 mx-28" type="submit" value="Guardar">
+      </form>
     </div>
     </footer>
   </div>
