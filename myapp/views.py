@@ -44,3 +44,7 @@ def compra(request):
     return render(request, 'compra.html')
 def verProducto(request):
     return render(request, 'verProducto.html')
+def jefe(request):
+    return render(request, 'jefe.html')
+def politicas(request):
+    return render(request, 'politicas.html')

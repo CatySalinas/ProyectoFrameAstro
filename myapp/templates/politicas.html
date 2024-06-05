@@ -1,0 +1,73 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Políticas de Venta - Empresa de Impresión 3D</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+</head>
+<body class="bg-gray-100 font-sans leading-normal tracking-normal">
+{% include 'header.html' %}
+
+    <main class="container mx-auto mt-8 p-4 bg-white shadow-lg rounded-lg">
+        <h2 class="text-2xl font-bold mb-4">Políticas de Venta</h2>
+        
+        <section class="mb-8">
+            <h3 class="text-xl font-semibold mb-2">Políticas de Precios</h3>
+            <ul class="list-disc list-inside">
+                <li>Descuentos por Volumen: Ofrecemos descuentos a clientes que compran grandes cantidades de productos.</li>
+                <li>Precios Estacionales: Ajustamos los precios según la temporada o demanda del producto.</li>
+                
+            </ul>
+        </section>
+
+        <section class="mb-8">
+            <h3 class="text-xl font-semibold mb-2">Políticas de Pago</h3>
+            <ul class="list-disc list-inside">
+                <li>Condiciones de Pago: Definimos claramente las condiciones de pago, como pago de contado o por transferencia.</li>
+                <li>Formas de Pago Aceptadas: Aceptamos métodos de pago como tarjetas de crédito, débito en la sucursal y en linea por medio de transferencias bancarias.</li>
+                
+            </ul>
+        </section>
+
+        <section class="mb-8">
+            <h3 class="text-xl font-semibold mb-2">Políticas de Devoluciones y Reembolsos</h3>
+            <ul class="list-disc list-inside">
+                <li>Período de Devolución: Aceptamos devoluciones dentro de los 30 días posteriores a la compra.</li>
+                <li>Condiciones de Devolución: Los productos deben estar en su embalaje original, sin usar.</li>
+                <li>Procesos de Reembolso: Los reembolsos se realizarán dentro de los 7 días hábiles posteriores a la recepción de la devolución.</li>
+            </ul>
+        </section>
+
+        <section class="mb-8">
+            <h3 class="text-xl font-semibold mb-2">Políticas de Envío</h3>
+            <ul class="list-disc list-inside">
+                <li>Tiempos de Entrega: Los tiempos de entrega estimados varían según la región y el tipo de compra.</li>
+                <li>Costos de Envío: Informamos sobre los costos de envío y ofrecemos envío gratuito a partir de montos de compra mayor o igual a 2000 pesos mexicanos.</li>
+                <li>Métodos de Envío: Disponemos de métodos de envío estándar.</li>
+            </ul>
+        </section>
+
+        <section class="mb-8">
+            <h3 class="text-xl font-semibold mb-2">Políticas de Atención al Cliente</h3>
+            <ul class="list-disc list-inside">
+                <li>Soporte Post-Venta: Ofrecemos soporte y atención al cliente después de la compra para resolver dudas o problemas mediante nuestro WhatsApp.</li>
+                <li>Garantías y Servicios: Informamos sobre las garantías del producto y los servicios post-venta disponibles.</li>
+            </ul>
+        </section>
+
+        <section class="mb-8">
+            <h3 class="text-xl font-semibold mb-2">Políticas de Privacidad y Seguridad</h3>
+            <ul class="list-disc list-inside">
+                <li>Protección de Datos: Garantizamos la seguridad de los datos personales de los clientes y cumplimos con las regulaciones de protección de datos.</li>
+            </ul>
+        </section>
+    </main>
+
+   {% include 'foot.html' %}
+    
+</body>
+</html>
