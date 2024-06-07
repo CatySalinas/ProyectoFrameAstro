@@ -1,10 +1,12 @@
 from django.urls import path
 from . import views 
 from django.contrib.auth.views import LoginView, LogoutView
+from .views import buscador
 
 
 urlpatterns = [
     path('', views.home, name='home'),
+
     path('new-design/', views.newDesing, name='new-design'),
     path('carShop/', views.carShop, name='car-shop'),
     path('homeIniciado/', views.homeIniciado, name='home-iniciado'),
@@ -26,4 +28,14 @@ urlpatterns = [
     path('registro/', views.registro, name='registro'),
     path('cerrarSesion/', views.cerrarSesion, name='cerrar-sesion'),
     path('inicioSesion/', views.inicioSesion, name='inicio-sesion'),
+
+   path('articulo/',buscador)
+
+
+    path('base/', views.base),
+    path('registrarArticulo/', views.registrarArticulo),
+    path('edicionArticulo/<nombre>', views.edicionArticulo),
+    path('editarArticulo/', views.editarArticulo),
+    path('eliminarArticulo/<nombre>', views.eliminarArticulo)
+
 ]

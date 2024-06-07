@@ -33,6 +33,7 @@ class Articulo(models.Model):
     """imagen = models.ImageField(upload_to='articulos/', null=True, blank=True)  # Agregar esta línea"""
 
     def _str_(self):
+
         return self.nombre
 
 class CarritoDeCompras(models.Model):
