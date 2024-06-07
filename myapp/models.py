@@ -28,10 +28,7 @@ class Articulo(models.Model):
     descripcion = models.TextField()
     material = models.CharField(max_length=100)
     costo = models.DecimalField(max_digits=10, decimal_places=2)
-
-    imagen = models.ImageField(upload_to='articulos/', null=True, blank=True)  # Agregar esta línea
-
-    def _str_(self):
+    def __str__(self):
         return self.nombre
 
 class CarritoDeCompras(models.Model):
