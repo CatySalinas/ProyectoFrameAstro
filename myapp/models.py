@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 class Project(models.Model):
     name = models.CharField(max_length=200)
@@ -28,11 +29,17 @@ class Articulo(models.Model):
     descripcion = models.TextField()
     material = models.CharField(max_length=100)
     costo = models.DecimalField(max_digits=10, decimal_places=2)
-    def __str__(self):
+
+    """imagen = models.ImageField(upload_to='articulos/', null=True, blank=True)  # Agregar esta línea"""
+
+    def _str_(self):
+
         return self.nombre
 
 class CarritoDeCompras(models.Model):
     articulos = models.ManyToManyField(Articulo)
+    #esto es para enlazar la informacion de usuario con la de carrito de compras
+    usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE, default=1)
 
     def _str_(self):
         return f'Carrito de compras {self.id}'

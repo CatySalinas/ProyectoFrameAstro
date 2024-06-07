@@ -1,17 +1,15 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect 
 from django.http import HttpResponse
-
-
-
 from . forms import UsuarioForm
-
 from django.db.models import Q
-from django.shortcuts import render
 
+from django.shortcuts import render
+from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
+from django.contrib.auth.models import User
+from django.contrib.auth import login, logout, authenticate
+from django.db import IntegrityError
 from .models import Articulo
 from django.contrib import messages
-
-
 # Create your views here.
 
 def about(request):
@@ -29,8 +27,11 @@ def index(request):
 def carShop(request):
     return render(request, 'carShop.html')
 
+
 def homeIniciado(request):
     return render(request, 'homeIniciado.html')
+
+
 
 def nuevoDiseno(request):
     return render(request, 'nuevoDiseno.html')
@@ -62,9 +63,63 @@ def seguimientoPedido(request):
 def compra(request):
     return render(request, 'compra.html')
 
+
 def verProducto(request):
     return render(request, 'verProducto.html')
 
+def politicas(request):
+    return render(request, 'politicas.html')
+
+
+def registro(request):
+
+    if request.method == 'GET':
+        return render(request, 'registro.html', {
+            'form': UserCreationForm()
+        })
+    else:
+        if request.POST['password1'] == request.POST['password2']:
+            # registro usuario
+            try:
+                user = User.objects.create_user(
+                    username=request.POST['username'], password=request.POST['password1'])
+                user.save()
+                login(request, user)
+                return redirect('home')
+            except IntegrityError:
+                return render(request, 'registro.html', {
+                    'form': UserCreationForm(),
+                    "error": "El usuario ya existe"
+                })
+
+        return render(request, 'registro.html', {
+                    'form': UserCreationForm(),
+                    "error": "Las contraseñas no coinciden"
+                })
+def cerrarSesion(request):
+        logout(request)
+        return redirect('home')
+    
+def inicioSesion(request):
+    if request.method == 'GET':
+        return render(request, 'inicioSesion.html',{
+        'form': AuthenticationForm()
+        })
+    else:
+        user = authenticate(request, username=request.POST['username'], password=request.POST['password'])
+        
+        if user is None:
+              return render(request, 'inicioSesion.html',{
+                 'form': AuthenticationForm,
+                 'error': 'Usuario o contraseña son incorrectos'
+                })
+        else:
+            login(request, user)
+            return redirect('home')
+            
+    
+        
+    
 
 def formulario(request):
     if request.method == 'POST':
@@ -142,4 +197,5 @@ def eliminarArticulo(request, nombre):
     articulo.delete()
     messages.success(request, '¡Articulo eliminado!')
     return redirect("http://127.0.0.1:8000/base/")           
+
 

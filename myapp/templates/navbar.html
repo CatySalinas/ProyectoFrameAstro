@@ -1,14 +1,14 @@
+
 {% load static %}
 
 <head>
     <!-- Incluye Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href='{% static "css/navbar.css"%}'>
+
 </head>
-
+{% block navbar %}
 <nav class="navbar">
-
-
 
     <div class="header">
 
@@ -17,19 +17,9 @@
             {%include 'buscador.html'%}
 
         </div>
-
-
-        <div id="productList">
-            <!-- Aquí se mostrarán los productos -->
-        </div>
-
-
         <a href="http://127.0.0.1:8000/nuevoDiseno/" class="new-desing">
             <i class="fas fa-plus fa-lg fa-fw" style="color: white;"></i> <!-- Ícono blanco de "add" de Font Awesome -->
         </a>
-
-        <button class="profil-btn" onclick="openModal()"><img src="{% static 'images/person.png' %}"
-                alt="Perfil"></button>
 
         <a href="/carShop" class="car-shop">
             <i class="fas fa-shopping-cart fa-lg fa-fw" style="color: white;"></i>
@@ -37,20 +27,43 @@
 
         </a>
 
-
         <a href="http://127.0.0.1:8000/contactanos/" class="ask-btn">
             <i class="fas fa-question-circle fa-lg fa-fw" style="color: white;"></i>
             <!-- Ícono blanco de "pregunta" de Font Awesome -->
         </a>
-        </button>
+        {% include 'login.html' %}
 
-        {%include 'login.html' %}
-
-
-
-
-
-    </div>
+        {% if user.is_authenticated %}
+        <li>
+            <a href="\cerrarSesion" style="color: white;">Cerrar Sesion</a>
+        </li>
+        {% else %}
+        <!--<button class="profil-btn" onclick="openModal()"><img src="{% static 'images/person.png' %}"
+            alt="Perfil"></button> -->
+       <li>
+            <a href="\registro" style="color: white;">
+            Registro
+            </a>
+       </li>
+        <li>
+            <a href="\inicioSesion" style="color: white;">
+            Inicio sesion
+            </a>
+        </li>
+        
+        {% endif %}
 
 
 </nav>
+{% endblock %}
+
+<body>
+{% block content %}
+{% endblock %}
+
+{% block footer %}
+{% endblock %}
+
+
+</body>
+</html>

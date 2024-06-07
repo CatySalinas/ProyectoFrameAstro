@@ -1,0 +1,36 @@
+{% load static %}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<link rel="stylesheet" href='{% static "css/foot.css"%}'>
+
+<footer class="bg-black text-white py-6 mt-5">
+    <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div>
+                <h2 class="text-lg font-bold mb-4">Contacto</h2>
+                <p>Teléfono: 442 740 0215</p>
+                <p>Correo: <a href="mailto:astro3d@gmail.com" class="text-blue-400">astro3d@gmail.com</a></p>
+            </div>
+            <div>
+                <h2 class="text-lg font-bold mb-4">Enlaces rápidos</h2>
+                <ul class="space-y-2">
+                    <li><a href="http://127.0.0.1:8000/" class="text-blue-400 hover:underline">Inicio</a></li>
+                    <li><a href="http://127.0.0.1:8000/contactanos/" class="text-blue-400 hover:underline">Sobre nosotros</a></li>
+                    <li><a href="http://127.0.0.1:8000/politicas/" class="text-blue-400 hover:underline">Nuestras políticas</a></li>
+                    
+                </ul>
+            </div>
+            <div>
+                <h2 class="text-lg font-bold mb-4">Síguenos</h2>
+                <div class="flex space-x-4">
+                    <a href="#" class="text-blue-400 hover:underline"><i class="fab fa-instagram fa-lg"></i></a>
+                    <a href="#" class="text-blue-400 hover:underline"><i class="fab fa-linkedin fa-lg"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-8">
+            <p>&copy; 2024 Astro3D. Todos los derechos reservados.</p>
+        </div>
+    </div>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</footer>

@@ -1,0 +1,51 @@
+{% extends 'navbar.html' %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+    <title>Inicio sesión</title>
+    <style>
+        /* Estilos personalizados para el formulario */
+        .custom-form {
+            background-color: white;
+            border: 1px solid rgba(0, 0, 0, 0.427);
+            padding: 70px;
+            border-radius: 8px;
+        }
+
+        .custom-form input {
+          border: 1px solid rgba(0, 0, 0, 0);
+          padding: 2px;
+          border-radius: 4px;
+          margin-bottom: 10px;
+          box-shadow: 0 0 5px rgba(21, 21, 21, 0.201); /* Add box shadow to input */
+        }
+        
+        .custom-form button {
+                display: block;
+                margin-top: 50px; /* Add margin to create space between inputs and button */
+                padding: 4px 8px;
+            }
+           
+    </style>
+    
+</head>
+<body>
+<div class="container mx-auto p-6">
+    <h1 class="text-3xl text-center mt-10 font-bold">Inicia Sesión</h1>
+    {% if error %}
+        <p class="text-red-500">{{ error }}</p>
+    {% endif %}
+    <form action="/inicioSesion/" method="POST" class="mt-4 bg-white shadow-md rounded px-8 pt-6 pb-8">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+            Iniciar Sesión
+        </button>
+    </form>
+</div>
+</body>
+{% endblock %}
