@@ -1,0 +1,41 @@
+{% extends "./inventario.html" %}
+
+{% block title %} Inventario de Astro3D{% endblock %}
+
+{% block body %}
+<div class="row">
+    <div class="col-md-4 offset-md-4">
+        <h2>Edición de Articulo</h2>
+        <div class="card">
+            <div class="card-body">
+                <form action="/editarArticulo/" method="POST">{% csrf_token %}
+
+                    <div class="form-group">
+                        <input type="text" id="txtNombre" name="txtNombre" value="{{articulo.nombre}}" class="form-control" placeholder="Nombre"
+                            maxlength="50" required>
+
+                    <div class="form-group">
+                        <input type="text" id="txtCategoria" name="txtCategoria" value="{{articulo.categoria}}" class="form-control" placeholder="Categoria"
+                             maxlength="50" required>  
+
+                    <div class="form-group">
+                        <input type="text" id="txtDescripcion" name="txtDescripcion" value="{{articulo.descripcion}}" class="form-control" placeholder="Nombre"
+                            maxlength="50" required> 
+                    
+                    <div class="form-group">
+                        <input type="text" id="txtMaterial" name="txtMaterial" value="{{articulo.material}}" class="form-control" placeholder="Material"
+                            maxlength="50" required>
+
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="numCosto" name="numCosto" value="{{articulo.costo}}" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-success btn-block text-white">Guardar</button> 
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
