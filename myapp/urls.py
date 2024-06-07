@@ -1,7 +1,7 @@
 from django.urls import path
 from . import views 
 from django.contrib.auth.views import LoginView, LogoutView
-
+from .views import buscador
 
 urlpatterns = [
     
@@ -24,5 +24,6 @@ urlpatterns = [
     path('formulario/',views.formulario,name='formulario'),
     path('compra',views.compra),
     path('verProducto/',views.verProducto),
+    path('articulo/',buscador)
 
 ]

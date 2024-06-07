@@ -5,7 +5,7 @@ from django.http import HttpResponse
 
 from . forms import UsuarioForm
 
-
+from django.db.models import Q
 from django.shortcuts import render
 
 # Create your views here.
@@ -62,3 +62,15 @@ def formulario(request):
     else:
         form = UsuarioForm()
     return render(request, 'formulario.html', {'form': form})
+def buscador(request):
+    busqueda = request.POST.get('buscar')
+    articulo= Articulo.objects.all()
+    if busqueda:
+        articulo= Articulo.objects.filter(
+            Q(nombre__iconstains=busqueda)| 
+            Q(categoria__iconstains=busqueda)|
+            Q(
+               material__iconstains=busqueda 
+            )
+        ).distinct()
+        return(render(request,'articulo.html',{articulo:articulo}))
