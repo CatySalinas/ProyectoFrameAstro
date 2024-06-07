@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from . forms import UsuarioForm
 from django.db.models import Q
-
+from .forms import ProductForm
 from django.shortcuts import render
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth.models import User
@@ -10,6 +10,7 @@ from django.contrib.auth import login, logout, authenticate
 from django.db import IntegrityError
 from .models import Articulo
 from django.contrib import messages
+from .forms import ProductMaterialForm
 # Create your views here.
 
 def about(request):
@@ -196,6 +197,29 @@ def eliminarArticulo(request, nombre):
     articulo = Articulo.objects.get(nombre=nombre)
     articulo.delete()
     messages.success(request, '¡Articulo eliminado!')
-    return redirect("http://127.0.0.1:8000/base/")           
+    return redirect("http://127.0.0.1:8000/base/")    
+
+
+def add_product(request):
+    if request.method == 'POST':
+        form = ProductForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return redirect('../add-product')  # Redirect to a list of products or any other page
+    else:
+        form = ProductForm()
+    return render(request, 'add_product.html', {'form': form})
+
+def add_material(request):
+    if request.method == 'POST':
+        form = ProductMaterialForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('../add-material')  # Redirect to a list view or another relevant page
+    else:
+        form = ProductMaterialForm()
+
+    return render(request, 'add_material.html', {'form': form})
+
 
 

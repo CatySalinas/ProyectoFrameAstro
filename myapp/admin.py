@@ -1,5 +1,6 @@
 from django.contrib import admin
 from .models import cuentaUsuario
+from .models import ProductMaterial,Product
 from .models import Articulo
 # Register your models here.
 

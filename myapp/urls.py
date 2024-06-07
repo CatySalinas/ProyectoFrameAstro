@@ -2,7 +2,8 @@ from django.urls import path
 from . import views 
 from django.contrib.auth.views import LoginView, LogoutView
 from .views import buscador
-
+from .views import add_material
+from .views import add_product
 
 urlpatterns = [
     path('', views.home, name='home'),
@@ -28,14 +29,14 @@ urlpatterns = [
     path('registro/', views.registro, name='registro'),
     path('cerrarSesion/', views.cerrarSesion, name='cerrar-sesion'),
     path('inicioSesion/', views.inicioSesion, name='inicio-sesion'),
-
-   path('articulo/',buscador)
-
-
+    path('articulo/',buscador),
     path('base/', views.base),
     path('registrarArticulo/', views.registrarArticulo),
     path('edicionArticulo/<nombre>', views.edicionArticulo),
     path('editarArticulo/', views.editarArticulo),
-    path('eliminarArticulo/<nombre>', views.eliminarArticulo)
+    path('eliminarArticulo/<nombre>', views.eliminarArticulo),
+    path('add-material/', add_material, name='add_material'),
+
+    path('add-product/', add_product, name='add_product'),
 
 ]
