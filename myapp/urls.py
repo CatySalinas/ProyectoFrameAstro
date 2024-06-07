@@ -4,26 +4,26 @@ from django.contrib.auth.views import LoginView, LogoutView
 
 
 urlpatterns = [
-    
-    path('', views.home),  # Asignando la vista 'home' a la ruta '/home/'
-    path('new-design/', views.newDesing),  # Asignando la vista 'newDesign' a la ruta '/new-design/'
-    path('carShop/', views.carShop),  # Asignando la vista 'carShop' a la ruta '/car-shop/'
-    path('homeIniciado/',views.homeIniciado), # Asignando la vista 'home
-    path('nuevoDiseno/',views.nuevoDiseno), # Asignando la vista 'nuevoDiseno' a la ruta '/nuevoDiseno/'
-    path('cuentaUsuario/',views.cuentaUsuario),
-    path('contactanos/',views.contactanos),
-    path('editarUsuario/',views.editarUsuario),
-    path('agregarProducto/',views.agregarProducto),
-    path('datosPago/',views.datosPago),
-    path('catalogo',views.catalogo),
-    path('registroUsuario/',views.registroUsuario),
-    path('seguimientoPedido/',views.seguimientoPedido),
-    path('carShop/',views.carShop),
+    path('', views.home, name='home'),
+    path('new-design/', views.newDesing, name='new-design'),
+    path('carShop/', views.carShop, name='car-shop'),
+    path('homeIniciado/', views.homeIniciado, name='home-iniciado'),
+    path('nuevoDiseno/', views.nuevoDiseno, name='nuevo-diseno'),
+    path('cuentaUsuario/', views.cuentaUsuario, name='cuenta-usuario'),
+    path('contactanos/', views.contactanos, name='contactanos'),
+    path('editarUsuario/', views.editarUsuario, name='editar-usuario'),
+    path('agregarProducto/', views.agregarProducto, name='agregar-producto'),
+    path('datosPago/', views.datosPago, name='datos-pago'),
+    path('catalogo', views.catalogo, name='catalogo'),
+    path('registroUsuario/', views.registroUsuario, name='registro-usuario'),
+    path('seguimientoPedido/', views.seguimientoPedido, name='seguimiento-pedido'),
+    path('carShop/', views.carShop, name='car-shop'),
     path('login/', LoginView.as_view(template_name='homeIniciado.html'), name='login'),
     path('logout/', LogoutView.as_view(next_page='home'), name='logout'),
-    path('formulario/',views.formulario,name='formulario'),
-    path('compra',views.compra),
-    path('verProducto/',views.verProducto),
-    path ('formulario/',views.formulario,name='formulario')
-
+    path('compra', views.compra, name='compra'),
+    path('verProducto/', views.verProducto, name='ver-producto'),
+    path('politicas/', views.politicas, name='politicas'),
+    path('registro/', views.registro, name='registro'),
+    path('cerrarSesion/', views.cerrarSesion, name='cerrar-sesion'),
+    path('inicioSesion/', views.inicioSesion, name='inicio-sesion'),
 ]
