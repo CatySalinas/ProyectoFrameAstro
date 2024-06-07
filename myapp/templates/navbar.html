@@ -14,8 +14,7 @@
 
         <img class="img_logo" src="{% static 'images/logoASTRO.png' %}" alt="Logo">
         <div class="flex items-center justify-between">
-            <input type="text" id="searchInput" placeholder="Busca por nombre de producto"
-                class="mr-4 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500 w-96">
+            {%include 'buscador.html'%}
 
         </div>
 

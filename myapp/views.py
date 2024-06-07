@@ -1,8 +1,16 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
-from .forms import UsuarioForm
+
+
+
+from . forms import UsuarioForm
+
+from django.db.models import Q
+from django.shortcuts import render
+
 from .models import Articulo
 from django.contrib import messages
+
 
 # Create your views here.
 
@@ -67,6 +75,20 @@ def formulario(request):
         form = UsuarioForm()
     return render(request, 'formulario.html', {'form': form})
 
+def buscador(request):
+    busqueda = request.POST.get('buscar')
+    articulo= Articulo.objects.all()
+    if busqueda:
+        articulo= Articulo.objects.filter(
+            Q(nombre__iconstains=busqueda)| 
+            Q(categoria__iconstains=busqueda)|
+            Q(
+               material__iconstains=busqueda 
+            )
+        ).distinct()
+        return(render(request,'articulo.html',{articulo:articulo}))
+
+
 
 
 def base(request):
@@ -120,3 +142,4 @@ def eliminarArticulo(request, nombre):
     articulo.delete()
     messages.success(request, '¡Articulo eliminado!')
     return redirect("http://127.0.0.1:8000/base/")           
+

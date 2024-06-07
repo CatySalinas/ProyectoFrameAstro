@@ -1,0 +1,222 @@
+{% load static %}
+
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+    <!-- Elemento del catálogo -->
+    <div class="bg-white shadow-md rounded-lg overflow-hidden">
+        <img src="{% static 'images/p1.jpg'%}" alt="Producto 1" class="w-full h-48 object-cover">
+        <div class="p-4">
+            <h2 class="text-2xl font-bold mb-2"> Set de lámparas</h2>
+            <p class="text-orange-600 mb-2">Categoría: Hogar</p> <!-- Espacio para insertar la categoría -->
+            
+            <p class="text-gray-600 mb-4 text-sm"> 3 lámaras de color naranja, azul y verde. Medidas: 30 x 30 cm</p>
+            <p class="text-gray-600 mb-3 text-sm">Tipo de material: Policarbonto (PC)</p>
+            <div class="flex justify-between items-center mb-4">
+                <span class="text-xl font-bold text-blue-600">$390.00 MX</span>
+                
+                <button class="bg-green-500 text-white px-3 py-1 rounded hover:bg-green-600 flex items-center">
+                    <i class="fas fa-shopping-cart"></i>
+                </button>
+            </div>
+            <a href="http://127.0.0.1:8000/datosPago/" class="w-full bg-blue-500 text-white px-3 py-2 rounded hover:bg-blue-600 block text-center">Comprar</a>
+        </div>
+    </div>
+    
+    <!-- Puedes duplicar este bloque para más productos -->
+    
+    <div class="bg-white shadow-md rounded-lg overflow-hidden">
+        <img src="{% static 'images/p2.jpg'%}" alt="Producto 2" class="w-full h-48 object-cover">
+        <div class="p-4">
+            <h2 class="text-2xl font-bold mb-2"> Porta rollo</h2>
+            <p class="text-orange-600 mb-2">Categoría: Hogar</p> <!-- Espacio para insertar la categoría -->
+            
+            <p class="text-gray-600 mb-4 text-sm"> Color negro. Medidas: 25 x 30 cm</p>
+            <p class="text-gray-600 mb-3 text-sm">Tipo de material: Nylon (Poliamida)</p>
+            <div class="flex justify-between items-center mb-4">
+                <span class="text-xl font-bold text-blue-600">$40.00 MX</span>
+                <button class="bg-green-500 text-white px-3 py-1 rounded hover:bg-green-600 flex items-center">
+                    <i class="fas fa-shopping-cart"></i>
+                </button>
+            </div>
+            <a href="http://127.0.0.1:8000/datosPago/" class="w-full bg-blue-500 text-white px-3 py-2 rounded hover:bg-blue-600 block text-center">Comprar</a>
+        </div>
+    </div>
+
+    <div class="bg-white shadow-md rounded-lg overflow-hidden">
+        <img src="{% static 'images/p3.jpg'%}" alt="Producto 3" class="w-full h-48 object-cover">
+        <div class="p-4">
+            <h2 class="text-2xl font-bold mb-2"> Silla neo</h2>
+            <p class="text-orange-600 mb-2">Categoría: Hogar</p> <!-- Espacio para insertar la categoría -->
+            
+            <p class="text-gray-600 mb-4 text-sm"> Silla de color negro, terminado luminoso. Medidas: 1.5 x 1.2 m</p>
+            <p class="text-gray-600 mb-3 text-sm">Tipo de material: Policarbonto (PC)</p>
+            <div class="flex justify-between items-center mb-4">
+                <span class="text-xl font-bold text-blue-600">$490.00</span>
+                <button class="bg-green-500 text-white px-3 py-1 rounded hover:bg-green-600 flex items-center">
+                    <i class="fas fa-shopping-cart"></i>
+                </button>
+            </div>
+            <a href="http://127.0.0.1:8000/datosPago/" class="w-full bg-blue-500 text-white px-3 py-2 rounded hover:bg-blue-600 block text-center">Comprar</a>
+        </div>
+    </div>
+
+    <div class="bg-white shadow-md rounded-lg overflow-hidden">
+        <img src="{% static 'images/p4.jpg'%}" alt="Producto 4" class="w-full h-48 object-cover">
+        <div class="p-4">
+            <h2 class="text-2xl font-bold mb-2"> Organizador geo</h2>
+            <p class="text-orange-600 mb-2">Categoría: Accesorios</p> <!-- Espacio para insertar la categoría -->
+            
+            <p class="text-gray-600 mb-4 text-sm"> Color blanco, terminado mate. Medidas: 30 x 20 cm</p>
+            <p class="text-gray-600 mb-3 text-sm">Tipo de material: Policarbonto (PC)</p>
+            <div class="flex justify-between items-center mb-4">
+                <span class="text-xl font-bold text-blue-600">$50.00</span>
+                <button class="bg-green-500 text-white px-3 py-1 rounded hover:bg-green-600 flex items-center">
+                    <i class="fas fa-shopping-cart"></i>
+                </button>
+            </div>
+            <a href="http://127.0.0.1:8000/datosPago/" class="w-full bg-blue-500 text-white px-3 py-2 rounded hover:bg-blue-600 block text-center">Comprar</a>
+        </div>
+    </div>
+
+    <div class="bg-white shadow-md rounded-lg overflow-hidden">
+        <img src="{% static 'images/p5.jpg'%}" alt="Producto 5" class="w-full h-48 object-cover">
+        <div class="p-4">
+            <h2 class="text-2xl font-bold mb-2"> Pulpito</h2>
+            <p class="text-orange-600 mb-2">Categoría: Juguetes</p> <!-- Espacio para insertar la categoría -->
+            
+            <p class="text-gray-600 mb-4 text-sm"> Pulpo de color dorado o azul metálico. Medidas: 15 x 15 cm</p>
+            <p class="text-gray-600 mb-3 text-sm">Tipo de material: PETG </p>
+            <div class="flex justify-between items-center mb-4">
+                <span class="text-xl font-bold text-blue-600">$60.00 MX</span>
+                <button class="bg-green-500 text-white px-3 py-1 rounded hover:bg-green-600 flex items-center">
+                    <i class="fas fa-shopping-cart"></i>
+                </button>
+            </div>
+            <button class="w-full bg-blue-500 text-white px-3 py-2 rounded hover:bg-blue-600">Comprar</button>
+        </div>
+    </div>
+
+    <div class="bg-white shadow-md rounded-lg overflow-hidden">
+        <img src="{% static 'images/p6.jpg'%}" alt="Producto 6" class="w-full h-48 object-cover">
+        <div class="p-4">
+            <h2 class="text-2xl font-bold mb-2"> Guitarra 3D</h2>
+            <p class="text-orange-600 mb-2">Categoría: Accesorios</p> <!-- Espacio para insertar la categoría -->
+            
+            <p class="text-gray-600 mb-4 text-sm"> Cuepo de guitarra con diseño. Color negro. Terminado mate. Medidas: 35 x 50 cm</p>
+            <p class="text-gray-600 mb-3 text-sm">Tipo de material: Policarbonto (PC)</p>
+            <div class="flex justify-between items-center mb-4">
+                <span class="text-xl font-bold text-blue-600">$70.00</span>
+                <button class="bg-green-500 text-white px-3 py-1 rounded hover:bg-green-600 flex items-center">
+                    <i class="fas fa-shopping-cart"></i>
+                </button>
+            </div>
+            <button class="w-full bg-blue-500 text-white px-3 py-2 rounded hover:bg-blue-600">Comprar</button>
+        </div>
+    </div>
+    <div class="bg-white shadow-md rounded-lg overflow-hidden">
+        <img src="{% static 'images/p7.jpg'%}" alt="Producto 7" class="w-full h-48 object-cover">
+        <div class="p-4">
+            <h2 class="text-2xl font-bold mb-2"> Set de lámparas</h2>
+            <p class="text-orange-600 mb-2">Categoría: Hogar</p> <!-- Espacio para insertar la categoría -->
+            <p class="text-gray-600 mb-4 text-sm"> 3 lámaras de color naranja, azul y verde. Medidas: 30 x 30 cm</p>
+            <p class="text-gray-600 mb-3 text-sm">Tipo de material: Policarbonto (PC)</p>
+            <div class="flex justify-between items-center mb-4">
+                <span class="text-xl font-bold text-blue-600">$80.00</span>
+                <button class="bg-green-500 text-white px-3 py-1 rounded hover:bg-green-600 flex items-center">
+                    <i class="fas fa-shopping-cart"></i>
+                </button>
+            </div>
+            <button class="w-full bg-blue-500 text-white px-3 py-2 rounded hover:bg-blue-600">Comprar</button>
+        </div>
+    </div>
+    <div class="bg-white shadow-md rounded-lg overflow-hidden">
+        <img src="{% static 'images/p8.jpg'%}" alt="Producto 8" class="w-full h-48 object-cover">
+        <div class="p-4">
+            <h2 class="text-2xl font-bold mb-2"> Set de lámparas</h2>
+            <p class="text-orange-600 mb-2">Categoría: Hogar</p> <!-- Espacio para insertar la categoría -->
+            
+            <p class="text-gray-600 mb-4 text-sm"> 3 lámaras de color naranja, azul y verde. Medidas: 30 x 30 cm</p>
+            <p class="text-gray-600 mb-3 text-sm">Tipo de material: Policarbonto (PC)</p>
+            <div class="flex justify-between items-center mb-4">
+                <span class="text-xl font-bold text-blue-600">$90.00</span>
+                <button class="bg-green-500 text-white px-3 py-1 rounded hover:bg-green-600 flex items-center">
+                    <i class="fas fa-shopping-cart"></i>
+                </button>
+            </div>
+            <button class="w-full bg-blue-500 text-white px-3 py-2 rounded hover:bg-blue-600">Comprar</button>
+        </div>
+    </div>
+    <div class="bg-white shadow-md rounded-lg overflow-hidden">
+        <img src="{% static 'images/p9.jpg'%}" alt="Producto 9" class="w-full h-48 object-cover">
+        <div class="p-4">
+            <h2 class="text-2xl font-bold mb-2"> Set de lámparas</h2>
+            <p class="text-orange-600 mb-2">Categoría: Hogar</p> <!-- Espacio para insertar la categoría -->
+            
+            <p class="text-gray-600 mb-4 text-sm"> 3 lámaras de color naranja, azul y verde. Medidas: 30 x 30 cm</p>
+            <p class="text-gray-600 mb-3 text-sm">Tipo de material: Policarbonto (PC)</p>
+            <div class="flex justify-between items-center mb-4">
+                <span class="text-xl font-bold text-blue-600">$100.00</span>
+                <button class="bg-green-500 text-white px-3 py-1 rounded hover:bg-green-600 flex items-center">
+                    <i class="fas fa-shopping-cart"></i>
+                </button>
+            </div>
+            <button class="w-full bg-blue-500 text-white px-3 py-2 rounded hover:bg-blue-600">Comprar</button>
+        </div>
+    </div>
+
+    <div class="bg-white shadow-md rounded-lg overflow-hidden">
+        <img src="{% static 'images/p10.jpg'%}" alt="Producto 10" class="w-full h-48 object-cover">
+        <div class="p-4">
+            <h2 class="text-2xl font-bold mb-2"> Set de lámparas</h2>
+            <p class="text-orange-600 mb-2">Categoría: Hogar</p> <!-- Espacio para insertar la categoría -->
+            
+            <p class="text-gray-600 mb-4 text-sm"> 3 lámaras de color naranja, azul y verde. Medidas: 30 x 30 cm</p>
+            <p class="text-gray-600 mb-3 text-sm">Tipo de material: Policarbonto (PC)</p>
+            <div class="flex justify-between items-center mb-4">
+                <span class="text-xl font-bold text-blue-600">$110.00</span>
+                <button class="bg-green-500 text-white px-3 py-1 rounded hover:bg-green-600 flex items-center">
+                    <i class="fas fa-shopping-cart"></i>
+                </button>
+            </div>
+            <button class="w-full bg-blue-500 text-white px-3 py-2 rounded hover:bg-blue-600">Comprar</button>
+        </div>
+    </div>
+    <div class="bg-white shadow-md rounded-lg overflow-hidden">
+        <img src="{% static 'images/p11.jpg'%}" alt="Producto 11" class="w-full h-48 object-cover">
+        <div class="p-4">
+            <h2 class="text-2xl font-bold mb-2"> Set de lámparas</h2>
+            <p class="text-orange-600 mb-2">Categoría: Hogar</p> <!-- Espacio para insertar la categoría -->
+            
+            <p class="text-gray-600 mb-4 text-sm"> 3 lámaras de color naranja, azul y verde. Medidas: 30 x 30 cm</p>
+            <p class="text-gray-600 mb-3 text-sm">Tipo de material: Policarbonto (PC)</p>
+            <div class="flex justify-between items-center mb-4">
+                <span class="text-xl font-bold text-blue-600">$120.00</span>
+                <button class="bg-green-500 text-white px-3 py-1 rounded hover:bg-green-600 flex items-center">
+                    <i class="fas fa-shopping-cart"></i>
+                </button>
+            </div>
+            <button class="w-full bg-blue-500 text-white px-3 py-2 rounded hover:bg-blue-600">Comprar</button>
+        </div>
+    </div>
+    <div class="bg-white shadow-md rounded-lg overflow-hidden">
+        <img src="{% static 'images/p12.png'%}" alt="Producto 12" class="w-full h-48 object-cover">
+        <div class="p-4">
+            <h2 class="text-2xl font-bold mb-2"> Set de lámparas</h2>
+            <p class="text-orange-600 mb-2">Categoría: Hogar</p> <!-- Espacio para insertar la categoría -->
+            
+            <p class="text-gray-600 mb-4 text-sm"> 3 lámaras de color naranja, azul y verde. Medidas: 30 x 30 cm</p>
+            <p class="text-gray-600 mb-3 text-sm">Tipo de material: Policarbonto (PC)</p>
+            <div class="flex justify-between items-center mb-4">
+                <span class="text-xl font-bold text-blue-600">$130.00</span>
+                <button class="bg-green-500 text-white px-3 py-1 rounded hover:bg-green-600 flex items-center">
+                    <i class="fas fa-shopping-cart"></i>
+                </button>
+            </div>
+            <button class="w-full bg-blue-500 text-white px-3 py-2 rounded hover:bg-blue-600">Comprar</button>
+        </div>
+    </div>
+
+        
+    
+    <!-- Más productos... -->
+ 
+</div>
