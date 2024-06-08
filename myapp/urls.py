@@ -1,13 +1,16 @@
 from django.urls import path
-from . import views 
+from django.contrib import admin
+from django.conf import settings
+from django.conf.urls.static import static
 from django.contrib.auth.views import LoginView, LogoutView
 from .views import buscador
 from .views import add_material
 from .views import add_product
+from . import views 
 
 urlpatterns = [
+    path('admin/', admin.site.urls),
     path('', views.home, name='home'),
-
     path('new-design/', views.newDesing, name='new-design'),
     path('carShop/', views.carShop, name='car-shop'),
     path('homeIniciado/', views.homeIniciado, name='home-iniciado'),
@@ -36,7 +39,9 @@ urlpatterns = [
     path('editarArticulo/', views.editarArticulo),
     path('eliminarArticulo/<nombre>', views.eliminarArticulo),
     path('add-material/', add_material, name='add_material'),
-
+   
     path('add-product/', add_product, name='add_product'),
 
 ]
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
