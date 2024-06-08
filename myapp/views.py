@@ -7,6 +7,7 @@ from django.shortcuts import render
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth.models import User
 from django.contrib.auth import login, logout, authenticate
+from .models import Product
 from django.db import IntegrityError
 from .models import Articulo
 from django.contrib import messages
@@ -221,5 +222,8 @@ def add_material(request):
 
     return render(request, 'add_material.html', {'form': form})
 
+def home (request):
+    productos = Product.objects.all()
+    return render(request, 'home.html', {'productos': productos})
 
 
