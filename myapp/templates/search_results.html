@@ -1,0 +1,14 @@
+
+
+{% if query %}
+    <h2>Resultados de la búsqueda para "{{ query }}":</h2>
+{% endif %}
+
+<ul>
+    {% for product in products %}
+        <li>{{ product.name }}</li>
+        
+    {% empty %}
+        <li>No se encontraron productos.</li>
+    {% endfor %}
+</ul>
