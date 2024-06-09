@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from . forms import UsuarioForm
 from django.db.models import Q
+from django.http import JsonResponse
 from .forms import ProductForm
 from django.shortcuts import render
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
@@ -132,19 +133,26 @@ def formulario(request):
         form = UsuarioForm()
     return render(request, 'formulario.html', {'form': form})
 
-def buscador(request):
-    busqueda = request.POST.get('buscar')
-    articulo= Articulo.objects.all()
-    if busqueda:
-        articulo= Articulo.objects.filter(
-            Q(nombre__iconstains=busqueda)| 
-            Q(categoria__iconstains=busqueda)|
-            Q(
-               material__iconstains=busqueda 
-            )
-        ).distinct()
-        return(render(request,'articulo.html',{articulo:articulo}))
 
+def buscador(request):
+    busqueda = request.GET.get('buscar', '')
+    if busqueda:
+        productos = Product.objects.filter(
+            Q(name__icontains=busqueda)
+        ).distinct()
+    else:
+        productos = Product.objects.all()
+
+    return render(request, 'home.html', {'productos': productos})
+
+def search_products(request):
+    query = request.GET.get('q')
+    if query:
+        products = Product.objects.filter(name__icontains=query)
+        products=Product.objects.filter(__icontains=query)
+    else:
+        products = Product.objects.all()
+    return render(request, 'search_results.html', {'products': products, 'query': query})
 
 
 

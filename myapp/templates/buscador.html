@@ -1,14 +1,6 @@
-
-<div>
-    <form action="" method="get"></form>
-    <div class="flex">
-    <input type="text" id="searchInput" 
-            name="buscar"
-            value="{{request.GET.buscar}}"
-            placeholder="Busca por nombre de producto"
-                class=" px-4 py-2 border border-gray-300 rounded-l focus:outline-none focus:border-blue-500 w-96">
-                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4  shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50" type="submit">
-                    Buscar
-                </button>
-            </div>      
-</div>
+<form method="GET" action="{% url 'buscador' %}" class="mb-6">
+    <div class="flex items-center">
+        <input type="text" name="buscar" placeholder="Buscar productos" class="w-full px-4 py-2 border rounded-l-md">
+        <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-r-md">Buscar</button>
+    </div>
+</form>

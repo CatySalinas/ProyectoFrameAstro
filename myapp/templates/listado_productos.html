@@ -1,35 +1,43 @@
+{%load static%}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Product List</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"></head>
-    <body class="bg-gray-100 p-8">
-        <div class="container mx-auto bg-white p-8 rounded shadow-md">
-            <h2 class="text-3xl font-bold mb-6 text-center">Lista de productos</h2>
-            <!-- listado_productos.html -->
-<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-    {% for producto in productos %}
-        <div class="bg-white p-4 rounded-lg shadow-md">
-            {% if producto.image %}
-                <img src="{{ producto.image.url}}" alt="{{ producto.name }}" class="h-40 w-full object-cover rounded-md">
-            {% else %}
-                <div class="h-40 w-full bg-gray-200 flex items-center justify-center rounded-md">
-                    No image
-                </div>
-            {% endif %}
-            <h2 class="mt-4 text-xl font-bold">{{ producto.name }}</h2>
-            <p class="text-gray-700">{{ producto.category.name }}</p>
-            <p class="text-gray-500 mt-2">{{ producto.details }}</p>
-        </div>
-    {% empty %}
-        <div class="col-span-full text-center">
-            <p class="py-2 px-4">No products available.</p>
-        </div>
-    {% endfor %}
-</div>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body class="bg-gray-100 p-8">
+    <div class="container mx-auto bg-white p-8 rounded shadow-md">
+        <h2 class="text-3xl font-bold mb-6 text-center">Lista de productos</h2>
 
+        <!-- Search Form -->
+       
+
+        <!-- Product List -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            {% for producto in productos %}
+                <div class="bg-white p-4 rounded-lg shadow-md">
+                    {% if producto.image %}
+                        <img src="{{ producto.image.url }}" alt="{{ producto.name }}" class="h-40 w-full object-cover rounded-md">
+                    {% else %}
+                        <div class="h-40 w-full bg-gray-200 flex items-center justify-center rounded-md">
+                            No image
+                        </div>
+                    {% endif %}
+                    <h2 class="mt-4 text-xl font-bold">{{ producto.name }}</h2>
+                    <p class="text-gray-700">{{ producto.category.name }}</p>
+                    <p class="text-gray-500 mt-2">{{ producto.details }}</p>
+                </div>
+            {% empty %}
+                <div class="col-span-full text-center">
+                    <p class="py-2 px-4">No products available.</p>
+                </div>
+            {% endfor %}
         </div>
-    </body>
-    </html>
+
+    </div>
+    <script src="{% static 'js/listado_productos.js' %}"></script>
+</body>
+</html>
