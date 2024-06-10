@@ -19,7 +19,7 @@ from django.views.decorators.csrf import csrf_exempt
 from django.contrib import messages
 from django.shortcuts import render, get_object_or_404
 from .models import Pedido, PedidoItem
-
+from django.contrib.auth.decorators import login_required, user_passes_test
 
 
 # Create your views here.
@@ -100,7 +100,6 @@ def politicas(request):
 
 
 def registro(request):
-
     if request.method == 'GET':
         return render(request, 'registro.html', {
             'form': UserCreationForm()
@@ -124,26 +123,39 @@ def registro(request):
                     'form': UserCreationForm(),
                     "error": "Las contraseñas no coinciden"
                 })
+
 def cerrarSesion(request):
-        logout(request)
-        return redirect('home')
-    
+    logout(request)
+    return redirect('home')
+
 def inicioSesion(request):
     if request.method == 'GET':
-        return render(request, 'inicioSesion.html',{
-        'form': AuthenticationForm()
+        return render(request, 'inicioSesion.html', {
+            'form': AuthenticationForm()
         })
     else:
         user = authenticate(request, username=request.POST['username'], password=request.POST['password'])
         
         if user is None:
-              return render(request, 'inicioSesion.html',{
-                 'form': AuthenticationForm,
-                 'error': 'Usuario o contraseña son incorrectos'
-                })
+            return render(request, 'inicioSesion.html', {
+                'form': AuthenticationForm(),
+                'error': 'Usuario o contraseña son incorrectos'
+            })
         else:
             login(request, user)
-            return redirect('home')
+            if user.is_superuser:
+                return redirect('add_product')
+            else:
+                return redirect('home')
+
+@login_required
+@user_passes_test(lambda u: u.is_superuser)
+def admin_home(request):
+    return render(request, 'add_product.html')
+
+@login_required
+def home(request):
+    return render(request, 'home.html')
     
 
 def formulario(request):
