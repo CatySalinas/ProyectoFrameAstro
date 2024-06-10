@@ -13,24 +13,25 @@
     <div class="header">
 
         <img class="img_logo" src="{% static 'images/logoASTRO.png' %}" alt="Logo">
-        <div class="flex items-center justify-between">
-            {%include 'buscador.html' %}
+        <div class="mt-8 flex items-center justify-between">
+            {%include 'buscador.html'%}
 
         </div>
-        <a href="http://127.0.0.1:8000/nuevoDiseno/" class="new-desing">
+        <a href="/nuevoDiseno/" class="new-desing">
             <i class="fas fa-plus fa-lg fa-fw" style="color: white;"></i> <!-- Ícono blanco de "add" de Font Awesome -->
         </a>
 
-        <a href="/carShop" class="car-shop">
+        <a href="/cart" class="car-shop">
             <i class="fas fa-shopping-cart fa-lg fa-fw" style="color: white;"></i>
             <!-- Ícono blanco de "carrito de compras" de Font Awesome -->
 
         </a>
 
-        <a href="http://127.0.0.1:8000/contactanos/" class="ask-btn">
+        <a href="/contactanos/" class="ask-btn">
             <i class="fas fa-question-circle fa-lg fa-fw" style="color: white;"></i>
             <!-- Ícono blanco de "pregunta" de Font Awesome -->
         </a>
+       
         {% include 'login.html' %}
 
         {% if user.is_authenticated %}

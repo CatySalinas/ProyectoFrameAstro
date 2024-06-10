@@ -1,13 +1,11 @@
 from django.urls import path
-from django.contrib import admin
+
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib.auth.views import LoginView, LogoutView
-from .views import buscador
-from .views import add_material
-from .views import add_product
+from .views import add_product,add_material,buscador,search_products
 from . import views 
-from .views import search_products
+
 
 urlpatterns = [
  
@@ -45,6 +43,14 @@ urlpatterns = [
 
 
    path('buscar/', buscador, name='buscador'),
+
+    path('cart/add/<int:product_id>/', views.cart_add, name='cart_add'),
+    path('cart/remove/<int:product_id>/', views.cart_remove, name='cart_remove'),
+    path('cart/decrement/<int:product_id>/', views.cart_decrement, name='cart_decrement'),
+    path('cart/clear/', views.cart_clear, name='cart_clear'),
+    path('cart/', views.cart_detail, name='cart_detail'),
+  
+
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

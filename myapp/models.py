@@ -97,3 +97,25 @@ class Compra(models.Model):
     def _str_(self):
         return f'Compra de {", ".join([articulo.nombre for articulo in self.articulos.all()])} por {self.usuario.nombre} ({self.estado})'
 
+class Order(models.Model):
+    nombre = models.CharField(max_length=100)
+    direccion = models.CharField(max_length=255)
+    ciudad = models.CharField(max_length=100)
+    estado = models.CharField(max_length=100)
+    codigo_postal = models.CharField(max_length=20)
+    telefono = models.CharField(max_length=20)
+    email = models.EmailField()
+    total = models.DecimalField(max_digits=10, decimal_places=2)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"Order {self.id}"
+
+class OrderItem(models.Model):
+    order = models.ForeignKey(Order, related_name='items', on_delete=models.CASCADE)
+    product = models.ForeignKey('Product', on_delete=models.CASCADE)  # Asegúrate de tener un modelo Product
+    price = models.DecimalField(max_digits=10, decimal_places=2)
+    quantity = models.PositiveIntegerField(default=1)
+
+    def __str__(self):
+        return f"OrderItem {self.id} - Order {self.order.id}"
