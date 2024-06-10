@@ -1,12 +1,15 @@
 from django.urls import path
-from . import views 
+
+from django.conf import settings
+from django.conf.urls.static import static
 from django.contrib.auth.views import LoginView, LogoutView
-from .views import buscador
+from .views import add_product,add_material,buscador,search_products
+from . import views 
 
 
 urlpatterns = [
+ 
     path('', views.home, name='home'),
-
     path('new-design/', views.newDesing, name='new-design'),
     path('carShop/', views.carShop, name='car-shop'),
     path('homeIniciado/', views.homeIniciado, name='home-iniciado'),
@@ -28,14 +31,26 @@ urlpatterns = [
     path('registro/', views.registro, name='registro'),
     path('cerrarSesion/', views.cerrarSesion, name='cerrar-sesion'),
     path('inicioSesion/', views.inicioSesion, name='inicio-sesion'),
-
-   path('articulo/',buscador)
-
-
+    path('lista_productos/',buscador),
     path('base/', views.base),
     path('registrarArticulo/', views.registrarArticulo),
     path('edicionArticulo/<nombre>', views.edicionArticulo),
     path('editarArticulo/', views.editarArticulo),
-    path('eliminarArticulo/<nombre>', views.eliminarArticulo)
+    path('eliminarArticulo/<nombre>', views.eliminarArticulo),
+    path('add-material/', add_material, name='add_material'),
+     path('search/', search_products, name='search_products'),
+    path('add-product/', add_product, name='add_product'),
+
+
+   path('buscar/', buscador, name='buscador'),
+
+    path('cart/add/<int:product_id>/', views.cart_add, name='cart_add'),
+    path('cart/remove/<int:product_id>/', views.cart_remove, name='cart_remove'),
+    path('cart/decrement/<int:product_id>/', views.cart_decrement, name='cart_decrement'),
+    path('cart/clear/', views.cart_clear, name='cart_clear'),
+    path('cart/', views.cart_detail, name='cart_detail'),
+  
 
 ]
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -1,15 +1,24 @@
-from django.shortcuts import render, redirect 
+from django.shortcuts import render, redirect,get_object_or_404
 from django.http import HttpResponse
 from . forms import UsuarioForm
 from django.db.models import Q
-
+from .cart import Cart
+from .models import Order, OrderItem 
+from django.views.decorators.http import require_POST
+from .forms import ProductForm
 from django.shortcuts import render
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth.models import User
 from django.contrib.auth import login, logout, authenticate
+from .models import Product
 from django.db import IntegrityError
 from .models import Articulo
 from django.contrib import messages
+from .forms import ProductMaterialForm
+from django.views.decorators.csrf import csrf_exempt
+from django.contrib import messages
+
+
 # Create your views here.
 
 def about(request):
@@ -130,19 +139,26 @@ def formulario(request):
         form = UsuarioForm()
     return render(request, 'formulario.html', {'form': form})
 
-def buscador(request):
-    busqueda = request.POST.get('buscar')
-    articulo= Articulo.objects.all()
-    if busqueda:
-        articulo= Articulo.objects.filter(
-            Q(nombre__iconstains=busqueda)| 
-            Q(categoria__iconstains=busqueda)|
-            Q(
-               material__iconstains=busqueda 
-            )
-        ).distinct()
-        return(render(request,'articulo.html',{articulo:articulo}))
 
+def buscador(request):
+    busqueda = request.GET.get('buscar', '')
+    if busqueda:
+        productos = Product.objects.filter(
+            Q(name__icontains=busqueda)
+        ).distinct()
+    else:
+        productos = Product.objects.all()
+
+    return render(request, 'home.html', {'productos': productos})
+
+def search_products(request):
+    query = request.GET.get('q')
+    if query:
+        products = Product.objects.filter(name__icontains=query)
+        products=Product.objects.filter(__icontains=query)
+    else:
+        products = Product.objects.all()
+    return render(request, 'search_results.html', {'products': products, 'query': query})
 
 
 
@@ -196,6 +212,63 @@ def eliminarArticulo(request, nombre):
     articulo = Articulo.objects.get(nombre=nombre)
     articulo.delete()
     messages.success(request, '¡Articulo eliminado!')
-    return redirect("http://127.0.0.1:8000/base/")           
+    return redirect("http://127.0.0.1:8000/base/")    
 
+
+def add_product(request):
+    if request.method == 'POST':
+        form = ProductForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return redirect('../add-product')  # Redirect to a list of products or any other page
+    else:
+        form = ProductForm()
+    return render(request, 'add_product.html', {'form': form})
+
+def add_material(request):
+    if request.method == 'POST':
+        form = ProductMaterialForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('../add-material')  # Redirect to a list view or another relevant page
+    else:
+        form = ProductMaterialForm()
+
+    return render(request, 'add_material.html', {'form': form})
+
+def home (request):
+    productos = Product.objects.all()
+    return render(request, 'home.html', {'productos': productos})
+
+
+@require_POST
+def cart_add(request, product_id):
+    cart = Cart(request)
+    product = get_object_or_404(Product, id=product_id)
+    cart.add(product)
+    return redirect('cart_detail')
+
+
+def cart_remove(request, product_id):
+    cart = Cart(request)
+    product = get_object_or_404(Product, id=product_id)
+    cart.remove(product)
+    return redirect('cart_detail')
+
+@require_POST
+def cart_decrement(request, product_id):
+    cart = Cart(request)
+    product = get_object_or_404(Product, id=product_id)
+    cart.decrement(product)
+    return redirect('cart_detail')
+
+def cart_clear(request):
+    cart = Cart(request)
+    cart.clear()
+    return redirect('cart_detail')
+
+def cart_detail(request):
+    cart = Cart(request)
+    total_price = cart.get_total_price()
+    return render(request, 'cart_detail.html', {'cart': cart, 'total_price': total_price})
 
