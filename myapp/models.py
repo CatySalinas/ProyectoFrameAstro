@@ -71,9 +71,6 @@ class meta:
     ordering = ['id']
 
 
-
-
-
 class Articulo(models.Model):
     nombre = models.CharField(max_length=100)
     categoria = models.CharField(max_length=100)
