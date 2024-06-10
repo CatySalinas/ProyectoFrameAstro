@@ -1,8 +1,10 @@
-from django.shortcuts import render, redirect 
+from django.shortcuts import render, redirect,get_object_or_404
 from django.http import HttpResponse
 from . forms import UsuarioForm
 from django.db.models import Q
-from django.http import JsonResponse
+from .cart import Cart
+from .models import Order, OrderItem 
+from django.views.decorators.http import require_POST
 from .forms import ProductForm
 from django.shortcuts import render
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
@@ -13,6 +15,10 @@ from django.db import IntegrityError
 from .models import Articulo
 from django.contrib import messages
 from .forms import ProductMaterialForm
+from django.views.decorators.csrf import csrf_exempt
+from django.contrib import messages
+
+
 # Create your views here.
 
 def about(request):
@@ -234,4 +240,35 @@ def home (request):
     productos = Product.objects.all()
     return render(request, 'home.html', {'productos': productos})
 
+
+@require_POST
+def cart_add(request, product_id):
+    cart = Cart(request)
+    product = get_object_or_404(Product, id=product_id)
+    cart.add(product)
+    return redirect('cart_detail')
+
+
+def cart_remove(request, product_id):
+    cart = Cart(request)
+    product = get_object_or_404(Product, id=product_id)
+    cart.remove(product)
+    return redirect('cart_detail')
+
+@require_POST
+def cart_decrement(request, product_id):
+    cart = Cart(request)
+    product = get_object_or_404(Product, id=product_id)
+    cart.decrement(product)
+    return redirect('cart_detail')
+
+def cart_clear(request):
+    cart = Cart(request)
+    cart.clear()
+    return redirect('cart_detail')
+
+def cart_detail(request):
+    cart = Cart(request)
+    total_price = cart.get_total_price()
+    return render(request, 'cart_detail.html', {'cart': cart, 'total_price': total_price})
 

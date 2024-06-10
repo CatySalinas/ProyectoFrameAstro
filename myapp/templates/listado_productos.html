@@ -10,8 +10,11 @@
 </head>
 <body class="bg-gray-100 p-8">
     <div class="container mx-auto bg-white p-8 rounded shadow-md">
-        <h2 class="text-3xl font-bold mb-6 text-center">Lista de productos</h2>
-
+       <div class="flex ">
+        <a href="/"><img class="h-10 w-10 mr-16 p-0" src="{%static 'images/arrowleft.png'%}" alt=""></a>
+        <h2 class="text-3xl font-bold mb-6  text-center">Lista de productos</h2>
+        
+    </div> 
         <!-- Search Form -->
        
 
@@ -29,6 +32,11 @@
                     <h2 class="mt-4 text-xl font-bold">{{ producto.name }}</h2>
                     <p class="text-gray-700">{{ producto.category.name }}</p>
                     <p class="text-gray-500 mt-2">{{ producto.details }}</p>
+                    
+                    <form class="mt-8 flex justify-end" action="{% url 'cart_add' producto.id %}" method="post">
+                        {% csrf_token %}
+                        <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded">Añadir al Carrito</button>
+                    </form>
                 </div>
             {% empty %}
                 <div class="col-span-full text-center">
