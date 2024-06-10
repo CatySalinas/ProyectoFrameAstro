@@ -49,6 +49,9 @@ urlpatterns = [
     path('cart/decrement/<int:product_id>/', views.cart_decrement, name='cart_decrement'),
     path('cart/clear/', views.cart_clear, name='cart_clear'),
     path('cart/', views.cart_detail, name='cart_detail'),
+    path('pedidoRealizado/', views.pedidoRealizado, name='pedido-realizado'),
+    path('seguimientoPedidoAdmin/', views.seguimientoPedidoAdmin, name='seguimiento-pedido-admin'),
+    
   
 
 ]

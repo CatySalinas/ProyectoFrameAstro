@@ -17,6 +17,9 @@ from django.contrib import messages
 from .forms import ProductMaterialForm
 from django.views.decorators.csrf import csrf_exempt
 from django.contrib import messages
+from django.shortcuts import render, get_object_or_404
+from .models import Pedido, PedidoItem
+
 
 
 # Create your views here.
@@ -40,6 +43,22 @@ def carShop(request):
 def homeIniciado(request):
     return render(request, 'homeIniciado.html')
 
+def pedidoRealizado(request):
+    return render(request, 'pedidoRealizado.html')
+
+
+def pedido_realizado(request, pedido_id):
+    pedido = get_object_or_404(Pedido, id=pedido_id)
+    items = PedidoItem.objects.filter(pedido=pedido)
+    total = sum(item.precio * item.cantidad for item in items)
+    return render(request, 'pedidoRealizado.html', {
+        'pedido': pedido,
+        'items': items,
+        'total': total,
+    })
+    
+def seguimientoPedidoAdmin(request):
+    return render(request, 'seguimientoPedidoAdmin.html')
 
 
 def nuevoDiseno(request):
@@ -125,9 +144,6 @@ def inicioSesion(request):
         else:
             login(request, user)
             return redirect('home')
-            
-    
-        
     
 
 def formulario(request):
@@ -159,7 +175,6 @@ def search_products(request):
     else:
         products = Product.objects.all()
     return render(request, 'search_results.html', {'products': products, 'query': query})
-
 
 
 def base(request):

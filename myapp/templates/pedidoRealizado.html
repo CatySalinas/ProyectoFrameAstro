@@ -1,0 +1,71 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+  <title>Pedido Realizado</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 flex flex-col items-center justify-center min-h-screen">
+  <div class="mb-10 w-full">
+    {% include 'header.html' %}
+  </div>
+
+  <div class="container mx-auto flex flex-col items-center justify-center">
+    <h1 class="text-3xl font-bold mb-6 text-center">Pedido Realizado</h1>
+   
+    <div class="flex flex-col items-center justify-center w-full">
+      <div class="bg-white p-6 rounded-lg shadow-md w-full md:w-1/2 text-center">
+        <h2 class="text-2xl font-semibold mb-4">¡Gracias por tu compra!</h2>
+        <p class="text-lg mb-6">Tu pedido ha sido realizado con éxito. Te enviaremos una confirmación por correo electrónico.</p>
+        <div class="flex justify-center">
+          <button class="bg-gray-700 text-white py-2 px-4 rounded-md font-medium hover:bg-gray-600">
+            <a href="http://127.0.0.1:8000/estadoPedido/" class="text-white">Ver estado de la compra</a>
+          </button>
+        </div>
+      </div>
+    </div>
+    
+    <div class="mt-10 w-full flex flex-col items-center justify-center">
+      <h2 class="text-2xl font-semibold mb-4 text-center">Detalles del pedido</h2>
+      <div class="bg-white p-6 rounded-lg shadow-md w-full md:w-1/2 text-center">
+        <p class="text-lg mb-4">Número de pedido: {{ pedido.id }}</p>
+        <table class="w-full mb-6">
+          <thead>
+            <tr>
+              <th class="text-left py-2">Producto</th>
+              <th class="text-right py-2">Precio</th>
+              <th class="text-right py-2">Cantidad</th>
+              <th class="text-right py-2">Subtotal</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for item in items %}
+            <tr>
+              <td class="py-2">{{ item.articulo.nombre }}</td>
+              <td class="text-right py-2">{{ item.precio }}</td>
+              <td class="text-right py-2">{{ item.cantidad }}</td>
+              <td class="text-right py-2">{{ item.precio|floatformat:2 }}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+          <tfoot>
+            <tr>
+              <td colspan="3" class="text-right py-2 font-semibold">Total</td>
+              <td class="text-right py-2 font-semibold">{{ total|floatformat:2 }}</td>
+            </tr>
+          </tfoot>
+        </table>
+      </div> 
+    </div>
+  </div>
+  
+  <div class="mt-10 w-full">
+    {% include 'footer.html' %}
+  </div>
+  
+  <script src="{% static 'js/home.js' %}"></script>
+</body>
+</html>
