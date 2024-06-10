@@ -48,6 +48,22 @@ class Product(models.Model):
 def __str__(self):
     return self.name
 
+class Pedido(models.Model):
+    fecha = models.DateTimeField(auto_now_add=True)
+    total = models.DecimalField(max_digits=10, decimal_places=2, default=0.00)
+
+    def __str__(self):
+        return f"Pedido {self.id}"
+
+class PedidoItem(models.Model):
+    pedido = models.ForeignKey(Pedido, related_name='items', on_delete=models.CASCADE)
+    articulo = models.ForeignKey(Product, on_delete=models.CASCADE)
+    precio = models.DecimalField(max_digits=10, decimal_places=2)
+    cantidad = models.PositiveIntegerField()
+
+    def __str__(self):
+        return f"{self.articulo.nombre} ({self.cantidad})"
+
 class meta:
     db_table = 'products'
     verbose_name = 'Producto'
